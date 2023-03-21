@@ -1,0 +1,110 @@
+<main>
+    <footer aria-labelledby="footer-heading" class="border-t bg-black">
+        <h2 id="footer-heading " class="sr-only">Footer</h2>
+        <div
+          class="px-8 py-12 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-20 lg:pt-32">
+          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="text-white xl:col-span-3">
+              <span class="text-lg font-semibold lg:text-2xl">This is me</span>
+              <p class="lg:w-1/4 mt-2 text-sm text-zinc-400">
+                <span class="mt-6 text-sm font-normal text-zinc-500">
+                 A profile of Carlske 
+                </span>
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 mt-12 lg:mt-24 xl:col-span-3">
+              <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 class="text-xl text-white">Navigation</h3>
+                  <ul role="list" class="mt-4 space-y-2">
+                    <li>
+                      <a
+                        href="/demo-pages"
+                        class="text-sm text-zinc-400 hover:text-white">
+                        This is me
+                      </a>
+                    </li>
+      
+                    <li>
+                      <a
+                        href="/style-guide"
+                        class="text-sm text-zinc-400 hover:text-white">
+                        Carlske
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-12 md:mt-0">
+                  <h3 class="text-xl text-white">Projects</h3>
+                  <ul role="list" class="mt-4 space-y-2">
+                    <li>
+                      <a
+                        href="https://www.monoqrom.unwrapped.design"
+                        class="text-sm text-zinc-400 hover:text-white">
+                        Private
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.acclivity.unwrapped.design"
+                        class="text-sm text-zinc-400 hover:text-white">
+                        Personal
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 class="text-xl text-white">Stay updated</h3>
+                  <ul role="list" class="mt-4 space-y-2">
+                    <li>
+                      <a
+                        href="https://www.lexingtonthemes.com/license"
+                        class="text-sm text-zinc-400 hover:text-white">
+                        Tecnologies
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-12 md:mt-0">
+                  <h3 class="text-xl text-white">Socials</h3>
+                  <ul role="list" class="mt-4 space-y-2">
+                    <li>
+                      <a
+                        href="https://twitter.com/unwrappedHQ"
+                        class="text-sm text-zinc-400 hover:text-white">
+                        @carlosvdiaz
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+      <footer class="bg-black border-t border-zinc-900">
+        <div
+          class="px-8 py-3 mx-auto sm:px-6 md:max-w-2xl md:px-4 lg:max-w-6xl lg:px-20">
+          <div class="md:flex md:items-center md:justify-between">
+            <div class="flex justify-center space-x-6 md:order-2">
+              <a
+                href="https://twitter.com/unwrappedHQ"
+                class="p-3 text-sm text-zinc-400 transition duration-500 ease-in-out transform hover:text-white">
+                <span class=""> @carlosvdiaz</span>
+              </a>
+            </div>
+            <div class="mt-8 md:mt-0 md:order-1">
+              <p class="text-center">
+                <span class="mx-auto mt-2 text-sm text-zinc-400">
+                  © 2023
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+</main>
