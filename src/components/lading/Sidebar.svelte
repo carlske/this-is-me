@@ -1,6 +1,6 @@
 <main>
     <div
-    class="sticky top-0 rounded-xl w-full px-8 sm:px-16 py-8 lg:py-12 lg:px-10">
+    class="sticky top-0  lg:py-12 lg:px-10">
 
     <h1
       class="text-black dark:text-white text-2xl md:text-4xl xl:text-7xl 2xl:text-6xl font-bold tracking-tighter">
