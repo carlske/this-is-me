@@ -1,7 +1,6 @@
 <script lang="ts">
   import AboutContent from "../components/about/AboutContent.svelte";
-  import Sidebar from "../components/lading/Sidebar.svelte";
-  import Footer from "../shared/Footer.svelte";
+
   </script>
   
 <main>
