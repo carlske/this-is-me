@@ -1,6 +1,5 @@
 <script lang="ts">
   import AboutContent from "../components/about/AboutContent.svelte";
-
   </script>
   
 <main>
