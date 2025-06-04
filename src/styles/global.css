@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@theme {
+    --color-*: initial;
+    --color-deep-black: #0D0D0D;
+    --color-industrial: #1F1F1F;
+    --color-matcha: #98C379;
+    --color-wasabi: #A3B9A2;
+    --color-rice: #F5F3F0;
+    --color-core-pink: #F472B6;
+
+    --spacing-line: 5px;
+    --spacing-space-line: 1rem;
+
+}
+
+
+:root {
+    background-color: var(--color-deep-black);
+}
+
+@utility grid-simple {
+    color: var(--color-matcha);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap, 1rem);
+    margin-top: 5rem;
+}
+
+p strong {
+    @apply font-semibold text-matcha;
+}
+
+.item {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    color: var(--color-wasabi);
+    cursor: pointer;
+    border-radius: 12px;
+    border: 1px solid var(--color-core-pink);
+}
+
+.item:hover {
+    border: 1px solid var(--color-wasabi);
+}
+
+
+
+/*** HeadingWithLine shared component ***/
+@layer components {
+
+
+    .letter-line {
+        display: flex;
+        font-weight: bold;
+        overflow: hidden;
+        position: relative;
+        gap: 1rem;
+    }
+
+    .letter-line--baseline {
+        align-items: baseline;
+    }
+
+    .letter-line--center {
+        align-items: center;
+    }
+
+    .letter-line--animation {
+        animation: slide-in 2s .1s forwards;
+    }
+
+    .letter-line::after {
+        content: "";
+        flex-grow: 1;
+        height: 5px;
+        background-color: var(--color-core-pink);
+    }
+
+    .letter-line--animation::after {
+        animation: color_bar 3s infinite;
+
+    }
+
+    .letter-line h1 {
+        font-family: 'Quicksand Variable', sans-serif;
+        font-weight: 700;
+        font-size: calc(12px + 7vw);
+    }
+
+    .letter-line h2 {
+        font-family: 'Quicksand Variable', sans-serif;
+        font-weight: 700;
+        font-size: calc(12px + 3vw);
+    }
+
+    .letter-line h3 {
+        font-family: 'Quicksand Variable', sans-serif;
+        font-weight: 400;
+        font-size: calc(12px + 1vw);
+    }
+
+    .letter-line p {
+        font-family: 'Roboto Mono Variable', monospace;
+        font-size: clamp(1rem, 2.5vw, 1.125rem);
+    }
+
+    @keyframes slide-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes color_bar {
+        0% {
+
+            background-color: var(--color-core-pink);
+        }
+
+        50% {
+            background-color: var(--color-wasabi);
+        }
+
+        100% {
+            background-color: var(--color-core-pink);
+        }
+
+    }
+}
+
+/** Button Shared component **/
+@layer components {
+    .bubbles {
+        --c1: #212121;
+        --size-letter: 17px;
+        padding: 0.5em 1em;
+        font-size: var(--size-letter);
+
+        background-color: transparent;
+        border: calc(var(--size-letter) / 6) solid var(--color-core-pink);
+        border-radius: 0.2em;
+        cursor: pointer;
+
+        overflow: hidden;
+        position: relative;
+        transition: 200ms cubic-bezier(0.83, 0, 0.17, 1);
+    }
+
+    .bubbles>.text {
+        font-weight: 700;
+        color: var(--color-core-pink);
+        position: relative;
+        z-index: 1;
+        transition: color 600ms cubic-bezier(0.83, 0, 0.17, 1);
+    }
+
+    .bubbles::before {
+        top: 0;
+        left: 0;
+    }
+
+    .bubbles::after {
+        top: 100%;
+        left: 100%;
+    }
+
+    .bubbles::before,
+    .bubbles::after {
+        content: "";
+        width: 150%;
+        aspect-ratio: 1/1;
+        scale: 0;
+        transition: 900ms cubic-bezier(0.76, 0, 0.24, 1);
+
+        background-color: var(--color-core-pink);
+        border-radius: 50%;
+
+        position: absolute;
+        translate: -50% -50%;
+    }
+
+    .bubbles:hover {
+        &>span {
+            color: var(--c1);
+        }
+
+        &::before,
+        &::after {
+            scale: 1;
+        }
+    }
+
+    .bubbles:active {
+        scale: 0.98;
+        filter: brightness(0.9);
+    }
+
+}
+
+/** Card Shared component **/
+@layer components {
+
+    .card {
+        padding: 1em;
+        background: var(--color-industrial);
+        color: var(--color-rice);
+        margin: 1em;
+        border-top: none;
+        border-bottom: none;
+        border-left: 3px solid var(--color-core-pink);
+        border-right: 3px solid var(--color-core-pink);
+    }
+
+    .card:hover {
+        border-left: 3px solid var(--color-wasabi);
+        border-right: 3px solid var(--color-wasabi);
+    }
+
+}
+
+/** Header Shared component **/
+
+.title-header {
+    padding: 2em;
+    position: sticky;
+    background-color: var(--color-deep-black);
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}

@@ -1,0 +1,51 @@
+<nav>
+    <div class="nav-item"><h1>INICIO</h1></div>
+    <div class="nav-item"><p>EXPERIENCIA</p></div>
+    <div class="nav-item"><span>PROYECTOS</span></div>
+    <div class="nav-item"><span>ACERCA DE MI</span></div>
+</nav>
+  
+<style>
+nav {
+
+  padding-left: 2vw;
+  width: 40vw;
+}
+
+.nav-item {
+  display: flex;
+  align-items: baseline;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-item span {
+}
+
+.nav-item::after {
+  content: "";
+  flex-grow: 1;
+  height: 5px;
+  background-color: var(--color-core-pink);
+}
+
+.nav-item:hover::after {
+  background-color: var(--color-wasabi);
+}
+
+.nav-item:hover {
+  background-color: var(--color-industrial-gray);
+  
+}
+
+
+.nav-item:hover span {
+  color: var(--color-matcha);
+}
+
+  </style>
+</head>
+</style>

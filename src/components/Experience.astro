@@ -1,0 +1,46 @@
+---
+import ArrowCard from "../components/shared/ArrowCard.astro";
+import Card from "../shared/components/Card/Card";
+import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
+---
+
+<section class="w-screen h-full mt-10 inset-0 -z-10">
+    <nav class="title-header">
+        <HeadingWithLine
+            tag="h2"
+            color="rice"
+            lineColor="pink"
+            className=""
+            animation="true"
+            position="center">Experiencia</HeadingWithLine
+        >
+    </nav>
+
+    <div class="flex justify-center">
+        <div class="w-5/6 grid grid-cols-1 gap-1">
+            <Card>
+                <HeadingWithLine
+                    tag="h3"
+                    color="matcha"
+                    lineColor="pink"
+                    className=""
+                    animation="false"
+                    position="center">Frontend Developer</HeadingWithLine
+                >
+            </Card>
+
+            <ArrowCard/>
+
+            <Card>
+                <HeadingWithLine
+                    tag="h3"
+                    color="matcha"
+                    lineColor="pink"
+                    className=""
+                    animation="false"
+                    position="center">Frontend Developer</HeadingWithLine
+                >
+            </Card>
+        </div>
+    </div>
+</section>

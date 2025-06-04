@@ -1,0 +1,33 @@
+---
+import '../styles/global.css'
+import '@fontsource/michroma';
+import '@fontsource-variable/quicksand';
+import '@fontsource-variable/roboto-mono';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>Portafolio</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html{
+		font-family: 'Roboto Mono Variable', monospace;
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		height: 100vh;
+		background-color: var(--background-color);
+	}
+</style>
