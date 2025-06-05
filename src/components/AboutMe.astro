@@ -1,10 +1,12 @@
 ---
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 import Foto from "../assets/me.jpg?url";
+import Astro from "../icons/technologies/front/Astro.astro";
+import React from "../icons/technologies/front/React.astro";
 ---
 
 <section
-    class="w-screen mt-10 inset-0 -z-10 h-full  items-center [background:radial-gradient(125%_125%_at_50%_10%,#0D0D0D_40%,#A3B9A2_100%)]"
+    class="w-screen  [background:radial-gradient(125%_125%_at_50%_10%,#0D0D0D_40%,#A3B9A2_100%)]"
 >
     <nav class="title-header">
         <HeadingWithLine
@@ -23,6 +25,8 @@ import Foto from "../assets/me.jpg?url";
             alt="carlos v foto"
             class="w-[15rem] rounded-full aspect-square object-cover"
         />
+
+        <div class="h-[3px] w-sm mt-10 opacity-10 bg-wasabi"></div>
 
         <div class="bg-industrial m-[3rem] p-8 text-rice">
             <p>
@@ -47,5 +51,6 @@ import Foto from "../assets/me.jpg?url";
                 >.
             </p>
         </div>
+
     </div>
 </section>

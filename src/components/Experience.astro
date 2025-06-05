@@ -2,9 +2,28 @@
 import ArrowCard from "../components/shared/ArrowCard.astro";
 import Card from "../shared/components/Card/Card";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
+import { getCollection } from "astro:content";
+
+const experiences = await getCollection("experience");
+
+interface Experience {
+  id: string;
+  data: {
+    position: string;
+    company: string;
+    employment_type: string;
+    start_date: string;
+    end_date: string | null;
+    duration: string;
+    location: string;
+    website: string;
+    skills: string[];
+  };
+}
+
 ---
 
-<section class="w-screen h-full mt-10 inset-0 -z-10">
+<section class="w-screen">
     <nav class="title-header">
         <HeadingWithLine
             tag="h2"
@@ -18,29 +37,53 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
 
     <div class="flex justify-center">
         <div class="w-5/6 grid grid-cols-1 gap-1">
-            <Card>
-                <HeadingWithLine
-                    tag="h3"
-                    color="matcha"
-                    lineColor="pink"
-                    className=""
-                    animation="false"
-                    position="center">Frontend Developer</HeadingWithLine
-                >
-            </Card>
+            {
+                experiences.map((experience : Experience, i : number) => {
+                    const { id, data } = experience
 
-            <ArrowCard/>
+                    console.log(experience)
+                    
+                    const {
+                        position,
+                        company,
+                        employment_type,
+                        start_date,
+                        end_date,
+                        duration,
+                        location,
+                        website,
+                        skills,                        
+                    } = data;
 
-            <Card>
-                <HeadingWithLine
-                    tag="h3"
-                    color="matcha"
-                    lineColor="pink"
-                    className=""
-                    animation="false"
-                    position="center">Frontend Developer</HeadingWithLine
-                >
-            </Card>
+                    let finishDate = 'now'
+
+                    if (end_date != null){
+                        finishDate = end_date
+                    }
+
+                    return (
+                        <Card
+                            company={company.concat(' · ',employment_type) }
+                            date={start_date.concat(',',finishDate)}
+                            skills={skills.join(',')}
+                        >
+                            <HeadingWithLine
+                                tag="h3"
+                                color="matcha"
+                                lineColor="pink"
+                                className=""
+                                animation="false"
+                                position="center"
+                            >
+                                {position}
+                            </HeadingWithLine>
+                        </Card>
+                        <div>
+                            {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/> } 
+                        </div>                        
+                    );
+                })
+            }
         </div>
     </div>
 </section>

@@ -20,7 +20,7 @@ import Redux from "../icons/technologies/front/Redux.astro";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 ---
 
-<section class="w-screen h-full mt-10 inset-0 -z-10">
+<section class="w-screen">
     <nav class="title-header">
         <HeadingWithLine
             tag="h2"
@@ -31,13 +31,22 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
             position="center">Tecnologías</HeadingWithLine
         >
     </nav>
-    <br />
-    <br />
-    <br />
+
+    <div
+        class="text-rice text-base sm:text-lg md:text-xl px-6 sm:px-12 max-w-4xl mx-auto mb-8 leading-relaxed"
+    >
+        Estas son algunas de las tecnologías con las que he trabajado
+        recientemente. Para crear soluciones eficientes tanto en frontend como
+        en backend, combinando diseño, rendimiento y escalabilidad.
+    </div>
+
+    
 
     <div class="flex justify-center">
         <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-4 rounded border bg-industrial">
+            <div
+                class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+            >
                 <HeadingWithLine
                     tag="h3"
                     color="matcha"
@@ -46,7 +55,6 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
                     animation="false"
                     position="baseline">Front End</HeadingWithLine
                 >
-
                 <div
                     class="text-rice grid grid-cols-2 gap-6 justify-items-center mt-4"
                 >
@@ -84,7 +92,8 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
                     </div>
                 </div>
             </div>
-            <div class="p-4 rounded bg-industrial">
+            <div class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+>
                 <HeadingWithLine
                     tag="h3"
                     color="matcha"
@@ -124,7 +133,9 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
                     </div>
                 </div>
             </div>
-            <div class="p-4 rounded bg-industrial">
+            <div
+                class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+            >
                 <HeadingWithLine
                     tag="h3"
                     color="matcha"

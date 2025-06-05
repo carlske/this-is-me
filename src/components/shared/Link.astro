@@ -1,0 +1,14 @@
+---
+interface Props {
+    href: string;
+    title: string;
+}
+
+const { href, title } = Astro.props;
+---
+
+<a href={href} , title={title} class="cursor-pointer">
+    <div class="item">
+        <slot />
+    </div>
+</a>

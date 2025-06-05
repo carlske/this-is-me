@@ -1,18 +1,18 @@
 ---
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
-import Card from "../shared/components/Card/Card";
 import Footer from "./Footer.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
-import GithubIcon from '../icons/GithubIcon.astro'
+import GithubIcon from "../icons/GithubIcon.astro";
 import MailIcon from "../icons/MailIcon.astro";
 import AboutMe from "./AboutMe.astro";
 import ArrowIcon from "../icons/ArrowIcon.astro";
 import Technologies from "./Technologies.astro";
 import Experience from "./Experience.astro";
+import Link from "./shared/Link.astro";
 ---
 
 <div id="container">
-	<main class="w-screen flex justify-center items-center flex-col">
+	<main class="w-full flex justify-center items-center flex-col">
 		<section
 			class="w-5/6 rounded bg-industrial p-4 h-dvh flex flex-col justify-center"
 		>
@@ -32,26 +32,38 @@ import Experience from "./Experience.astro";
 				animation="true"
 				position="baseline">Frontend Developer</HeadingWithLine
 			>
-			<p class="text-rice sm:text-[20px]  mt-10 font-medium">Me apasiona crear software <strong>eficiente</strong>, <strong>escalable</strong> y orientado a brindar la mejor <strong>experiencia de usuario</strong>.</p>
+			<p class="text-rice sm:text-[20px] mt-10 font-medium">
+				Me apasiona crear software <strong>eficiente</strong>, <strong
+					>escalable</strong
+				> y orientado a brindar la mejor <strong
+					>experiencia de usuario</strong
+				>.
+			</p>|
 			<div class="grid-simple sm:[--cols:3]">
-				<div class="item">
+				<Link
+					href="https://www.linkedin.com/in/carlos-v-d-365394127/"
+					title="LinkedIn"
+				>
 					<LinkedInIcon class="w-7 h-7" />
-				</div>
-				<div class="item">
+				</Link>
+				<Link href="https://github.com/carlske" title="Github">
 					<GithubIcon class="w-7 h-7" />
-				</div>
-				<div class="item">
+				</Link>
+				<Link href="mailto:fernancarldiaz@outlook.com" title="Correo">
 					<MailIcon class="w-7 h-7" />
-				</div>
+				</Link>
 			</div>
-			<div class="absolute bottom-0 left-1/2 -translate-x-1/2 transform flex items-center flex-col mb-2.5">
-				<span class=" text-rice text-sm">Quién soy</span>
-				<ArrowIcon class="w-7 h-7  text-core-pink transition-colors"/>
+			<div
+				class="absolute bottom-0 left-1/2 -translate-x-1/2 transform flex items-center flex-col mb-2.5"
+			>
+				<span class="text-rice text-sm">Quién soy</span>
+				<ArrowIcon class="w-7 h-7 text-core-pink transition-colors" />
 			</div>
 		</section>
 
-		<Experience/>
-		<Technologies/>
-		<AboutMe/>
+		<Experience />
+		<Technologies />
+		<AboutMe />
+		<Footer/>
 	</main>
 </div>
