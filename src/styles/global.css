@@ -147,23 +147,38 @@ p strong {
         color: var(--color-rice);
         border-top: none;
         border-bottom: none;
-        border-left: 3px solid var(--color-core-pink);
-        border-right: 3px solid var(--color-core-pink);
-    }
-
-    .card:hover {
         border-left: 3px solid var(--color-wasabi);
         border-right: 3px solid var(--color-wasabi);
+
     }
 
+    .card {
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+        animation-timeline: --reveal;
+        animation-range: entry 25% cover 50%;
+    }
+    
+    @keyframes show {
+        from {
+            opacity: 0;
+            scale: 10%;
+        }
+
+        to {
+            opacity: 1;
+            scale: 100%;
+        }
+    }
 }
 
 @layer components {
     button {
-        padding: 1em;
+        padding: 0.5em;
         cursor: pointer;
         border-radius: 1em;
-        width: 30vw;
+        width: 25vw;
     }
 
     button.primary {
