@@ -13,7 +13,7 @@ interface CardProps {
 
 const Card = ({ children, date, company, skills, id, url }: CardProps) => {
     return <article className="card">
-        <div className="card--name">
+        <div className="text-wasabi font-bold text-xl">
             {children}
         </div>
         <section className="card--content">

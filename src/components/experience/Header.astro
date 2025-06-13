@@ -1,20 +1,25 @@
 ---
+import ArrowIcon from "../../icons/ArrowIcon.astro";
+import BackHome from "../../icons/BackHome.astro";
 import HeadingWithLine from "../../shared/components/HeadingWithLine/HeadingWithLine";
 
 const { title, company } = Astro.props;
 ---
 
 <section class="p-4">
+    <div class="flex items-start">
+        <a href="/">
+            <BackHome class="w-10 h-10 text-rice hover:text-matcha hover:cursor-pointer" />
+        </a>
+        <h1 class="mt-10 text-rice text-4xl md:text-6xl font-bold">{title}</h1>
+    </div>
 
-
-        <h1 class="mt-10 text-rice text-3xl md:text-6xl font-bold">{title}</h1>
-
-        <HeadingWithLine
-            tag="h2"
-            color="matcha"
-            lineColor="wasabi"
-            className=""
-            animation="false"
-            position="center">{company}</HeadingWithLine
-        >
+    <HeadingWithLine
+        tag="h2"
+        color="matcha"
+        lineColor="wasabi"
+        className=""
+        animation="false"
+        position="center">{company}</HeadingWithLine
+    >
 </section>

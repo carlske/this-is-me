@@ -52,16 +52,10 @@ const experiences = await getCollection("experience");
                             id={id}
                             url={website}
                         >
-                            <HeadingWithLine
-                                tag="h3"
-                                color="matcha"
-                                lineColor="pink"
-                                className=""
-                                animation="false"
-                                position="center"
+                            <span
                             >
                                 {position}
-                            </HeadingWithLine>
+                            </span>
                         </Card>
                         <div>
                             {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/> } 
