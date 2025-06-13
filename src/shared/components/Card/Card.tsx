@@ -1,18 +1,22 @@
-import Button from "../Button/Button"
+import ButtonLink from "../ButtonLink/ButtonLink"
+import Chip from "../Chip/Chip"
 
 interface CardProps {
     children: React.ReactNode
     company: String
     date: String
     skills: String
+    id: string
+    url: string | undefined
+
 }
 
-const Card = ({ children, date, company, skills }: CardProps) => {
-    return <div className="card">
+const Card = ({ children, date, company, skills, id, url }: CardProps) => {
+    return <article className="card">
         <div className="card--name">
             {children}
         </div>
-        <div className="card--content">
+        <section className="card--content">
             <div className="text-xs flex flex-col">
                 <span>{company}</span>
                 <span>{date}</span>
@@ -23,21 +27,20 @@ const Card = ({ children, date, company, skills }: CardProps) => {
 
                 <p>I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work doing Frontend, Php and Python solutions</p>
             </div>
-        </div>
+        </section>
 
-        <div className="mt-7 ">
-            {skills.split(',').map(skill => {
-                return <span className="bg-core-pink text-rice font-bold rounded-lg p-2 mr-1.5 text-xs " key={skill}>{skill}</span>;
+        <section className="mt-7 " aria-label="Habilidades">
+            {skills.split(',').map((skill, i) => {
+                return <Chip key={i} skill={skill}></Chip>
             })}
-        </div>
+        </section>
         <div className="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
 
         <div className="flex flex-row justify-around mt-5">
-        <Button type="secundary">Ver mas</Button>
-        <Button type="primary">Visitar</Button>
+            <ButtonLink link={`./experience/${id}`} type="secundary">Ver mas</ButtonLink>
         </div>
 
-    </div>
+    </article>
 }
 
 export default Card

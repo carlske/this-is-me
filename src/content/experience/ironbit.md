@@ -1,7 +1,7 @@
 ---
 id: "3"
 position: Web Developer
-company: Decathlon Mexico
+company: Ironbit
 employment_type: Jornada completa
 start_date: "2021-01"
 end_date: null

@@ -1,0 +1,32 @@
+---
+import ButtonLink from "../../shared/components/ButtonLink/ButtonLink";
+import Chip from "../../shared/components/Chip/Chip";
+import type { Project } from "../../shared/types/Experience";
+
+const { title, skills, description, link } = Astro.props;
+---
+
+<article
+    class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+>
+    <header class="mb-2">
+        <h2 class="text-wasabi text-2xl font-semibold">
+            {title}
+        </h2>
+    </header>
+    <div class="mt-7">
+        {
+            skills.map((skill: string) => {
+                return <Chip skill={skill} />;
+            })
+        }
+    </div>
+    <div class="mt-4 p-2 text-sm">
+        <p class="text-rice">
+            {description}
+        </p>
+    </div>
+    <div>
+        <ButtonLink link={link} type="secundary"> Visitar </ButtonLink>
+    </div>
+</article>

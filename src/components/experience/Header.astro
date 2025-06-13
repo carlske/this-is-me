@@ -1,0 +1,29 @@
+---
+import HeadingWithLine from "../../shared/components/HeadingWithLine/HeadingWithLine";
+
+const { title, company } = Astro.props;
+---
+
+<section
+    class="h-1/4 flex flex-col justify-center items-center"
+>
+    <div class="w-5/6">
+        <HeadingWithLine
+            tag="h1"
+            color="rice"
+            lineColor="pink"
+            className=""
+            animation="false"
+            position="baseline">{title}</HeadingWithLine
+        >
+
+        <HeadingWithLine
+            tag="h2"
+            color="matcha"
+            lineColor="wasabi"
+            className=""
+            animation="false"
+            position="baseline">{company}</HeadingWithLine
+        >
+    </div>
+</section>

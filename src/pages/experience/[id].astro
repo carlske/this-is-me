@@ -1,0 +1,74 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import type { Experience, Project } from "../../shared/types/Experience";
+import Header from "../../components/experience/Header.astro";
+import Chip from "../../shared/components/Chip/Chip";
+import ButtonLink from "../../shared/components/ButtonLink/ButtonLink";
+import Footer from "../../components/Footer.astro";
+import Projects from "../../components/experience/Projects.astro";
+
+export async function getStaticPaths() {
+	const experiences: Experience[] = await getCollection("experience");
+
+	return experiences.map((experience) => ({
+		params: { id: experience.data.id },
+		props: { data: experience.data },
+	}));
+}
+
+const { data } = Astro.props;
+
+const {
+	position,
+	company,
+	employment_type,
+	start_date,
+	end_date,
+	duration,
+	location,
+	website,
+	skills,
+	id,
+	projects,
+} = data;
+
+let finishDate = "now";
+
+if (end_date != null) {
+	finishDate = end_date;
+}
+---
+
+<Layout>
+	<main
+		class="[background:radial-gradient(100%_21%_at_30%_2%,#A3B9A2_20%,#0D0D0D_100%)]"
+		role="main"
+		aria-label="Detalle de experiencia laboral"
+	>
+		<Header title={position} company={company} />
+		<section class="flex justify-center flex-col items-center">
+			<article class="text-wasabi p-3.5">
+				<span>{location}</span>
+				<span>{start_date.concat(",", finishDate)}</span>
+			</article>
+			<div class="w-5/6 h-full grid grid-cols-1 gap-10">
+				{
+					Array.isArray(projects) && projects.length > 0 ? (
+						projects.map((project: Project, index: number) => (
+							<Projects
+								key={index}
+								title={project.title}
+								link={project.link}
+								skills={project.tech}
+								description={project.description}
+							/>
+						))
+					) : (
+						<p>No hay proyectos disponibles.</p>
+					)
+				}
+			</div>
+		</section>
+	</main>
+</Layout>

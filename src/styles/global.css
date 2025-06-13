@@ -149,7 +149,6 @@ p strong {
         border-bottom: none;
         border-left: 3px solid var(--color-wasabi);
         border-right: 3px solid var(--color-wasabi);
-
     }
 
     .card {
@@ -159,7 +158,7 @@ p strong {
         animation-timeline: --reveal;
         animation-range: entry 25% cover 50%;
     }
-    
+
     @keyframes show {
         from {
             opacity: 0;
@@ -174,29 +173,32 @@ p strong {
 }
 
 @layer components {
-    button {
+
+    .button {
         padding: 0.5em;
-        cursor: pointer;
         border-radius: 1em;
-        width: 25vw;
+        cursor: pointer;
+
     }
 
-    button.primary {
+
+
+    .button.primary {
         border: 3px solid var(--color-wasabi);
     }
 
-    button.primary:hover {
+    .button.primary:hover {
         border: 3px solid var(--color-matcha);
         background-color: var(--color-matcha);
         color: var(--color-deep-black)
     }
 
-    button.secundary {
+    .button.secundary {
         background-color: var(--color-matcha);
         color: var(--color-deep-black)
     }
 
-    button.secundary:hover {
+    .button.secundary:hover {
         opacity: 90%;
     }
 }

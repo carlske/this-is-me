@@ -12,7 +12,16 @@ const experienceCollection = defineCollection({
     duration: z.string(),
     location: z.string(),
     website: z.string().url(),
-    skills: z.array(z.string())
+    skills: z.array(z.string()),
+    projects: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        tech: z.array(z.string()),
+        link: z.string().url().optional(),
+        private: z.boolean().optional()
+      })
+    )
   })
 });
 

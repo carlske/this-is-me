@@ -13,7 +13,23 @@ skills:
   - PHP
   - JS
   - CSS
+projects:
+  - title: Decathlon E-commerce Platform
+    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    tech:
+      - Svelte
+      - TailwindCSS
+      - Php
+    link: "https://www.decathlon.com.mx"
+    private: true
+  - title: ShipperBox
+    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    tech:
+      - React
+      - Web Components
+      - TailwindCSS
+    link: "https://www.decathlon.com.mx"
 ---
 
-I work with developers from many countries: Canada, France, Ukraine, Egypt, etc.  
+I worked with developers from many countries: Canada, France, Ukraine, Egypt, etc.  
 I work doing Frontend, PHP, and Python solutions.

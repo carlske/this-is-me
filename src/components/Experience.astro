@@ -3,23 +3,9 @@ import ArrowCard from "../components/shared/ArrowCard.astro";
 import Card from "../shared/components/Card/Card";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 import { getCollection } from "astro:content";
+import type { Experience } from "../shared/types/Experience";
 
 const experiences = await getCollection("experience");
-
-interface Experience {
-  id: string;
-  data: {
-    position: string;
-    company: string;
-    employment_type: string;
-    start_date: string;
-    end_date: string | null;
-    duration: string;
-    location: string;
-    website: string;
-    skills: string[];
-  };
-}
 
 ---
 
@@ -38,21 +24,18 @@ interface Experience {
     <div class="flex justify-center">
         <div class="w-5/6 grid grid-cols-1 gap-1">
             {
-                experiences.map((experience : Experience, i : number) => {
-                    const { id, data } = experience
+                experiences.map((experience : Experience , i : number) => {
+                    const {  data } = experience 
 
-                    console.log(experience)
-                    
                     const {
                         position,
                         company,
                         employment_type,
                         start_date,
                         end_date,
-                        duration,
-                        location,
                         website,
-                        skills,                        
+                        skills,
+                        id,
                     } = data;
 
                     let finishDate = 'now'
@@ -66,6 +49,8 @@ interface Experience {
                             company={company.concat(' · ',employment_type) }
                             date={start_date.concat(',',finishDate)}
                             skills={skills.join(',')}
+                            id={id}
+                            url={website}
                         >
                             <HeadingWithLine
                                 tag="h3"
