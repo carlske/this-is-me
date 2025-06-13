@@ -29,6 +29,13 @@ projects:
       - Web Components
       - TailwindCSS
     link: "https://www.decathlon.com.mx"
+  - title: Identificador Regional - LATAM 
+    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    tech:
+      - React
+      - Web Components
+      - TailwindCSS
+    link: "https://www.decathlon.com.mx"
 ---
 
 I worked with developers from many countries: Canada, France, Ukraine, Egypt, etc.  

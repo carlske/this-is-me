@@ -1,6 +1,7 @@
 ---
 import ButtonLink from "../../shared/components/ButtonLink/ButtonLink";
 import Chip from "../../shared/components/Chip/Chip";
+import ChipList from "../../shared/components/ChipList/ChipList";
 import type { Project } from "../../shared/types/Experience";
 
 const { title, skills, description, link } = Astro.props;
@@ -14,25 +15,21 @@ const { title, skills, description, link } = Astro.props;
             {title}
         </h2>
     </header>
-            <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
+    
+    <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
 
-    <div class="mt-7">
-
-        {
-            skills.map((skill: string) => {
-                return <Chip skill={skill} />;
-            })
-        }
-    </div>
-    <div class="mt-4 p-2 text-sm">
+    <section class="mt-7">
+        <ChipList skills={skills}></ChipList>
+    </section>
+    <section class="mt-4 p-2 text-sm">
         <p class="text-rice">
             {description}
         </p>
         <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
 
-    </div>
+    </section>
 
-    <div class="mt-2">
-        <ButtonLink link={link} type="secundary"> Visitar </ButtonLink>
-    </div>
+    <section class="mt-2">
+        <ButtonLink link={link} type="secundary">Visitar</ButtonLink>
+    </section>
 </article>

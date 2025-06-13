@@ -1,5 +1,6 @@
 import ButtonLink from "../ButtonLink/ButtonLink"
 import Chip from "../Chip/Chip"
+import ChipList from "../ChipList/ChipList"
 
 interface CardProps {
     children: React.ReactNode
@@ -24,15 +25,12 @@ const Card = ({ children, date, company, skills, id, url }: CardProps) => {
             <div className="h-[3px] w-full  mt-4 opacity-10 bg-wasabi"></div>
 
             <div className="mt-4 p-2 text-xs">
-
                 <p>I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work doing Frontend, Php and Python solutions</p>
             </div>
         </section>
 
         <section className="mt-7 " aria-label="Habilidades">
-            {skills.split(',').map((skill, i) => {
-                return <Chip key={i} skill={skill}></Chip>
-            })}
+            <ChipList skills={skills.split(',')} />
         </section>
         <div className="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
 

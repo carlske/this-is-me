@@ -5,10 +5,10 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import GithubIcon from "../icons/GithubIcon.astro";
 import MailIcon from "../icons/MailIcon.astro";
 import AboutMe from "./AboutMe.astro";
-import ArrowIcon from "../icons/ArrowIcon.astro";
 import Technologies from "./Technologies.astro";
 import Experience from "./Experience.astro";
 import Link from "./shared/Link.astro";
+import StartIcon from "../icons/StartIcon.astro";
 ---
 
 <div id="container">
@@ -35,11 +35,15 @@ import Link from "./shared/Link.astro";
 				>
 				<p class="text-rice text-base sm:text-xl mt-10">
 					Me apasiona crear software <strong>eficiente</strong>, <strong
-						>escalable</strong
-					> y orientado a brindar la mejor <strong
+						>escalable</strong>
+					 y orientado a brindar la mejor <strong
 						>experiencia de usuario</strong
 					>.
-				</p>|
+				</p>
+				<div class="flex items-center gap-5">
+					<StartIcon class="w-10 h-10 text-core-pink" />
+					<spa class="text-matcha text-sm">Disponible para nuevas oportunidades</spa>
+				</div>
 				<div class="grid-simple sm:[--cols:3]">
 					<Link
 						href="https://www.linkedin.com/in/carlos-v-d-365394127/"
@@ -57,12 +61,6 @@ import Link from "./shared/Link.astro";
 						<MailIcon class="w-7 h-7" />
 					</Link>
 				</div>
-			<div
-				class="absolute bottom-0 left-1/2 -translate-x-1/2 transform flex items-center flex-col mb-2.5"
-			>
-				<span class="text-rice text-sm">Quién soy</span>
-				<ArrowIcon class="w-7 h-7 text-core-pink transition-colors" />
-			</div>
 		</section>
 
 		<Experience />
