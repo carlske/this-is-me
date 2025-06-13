@@ -3,6 +3,7 @@ import '../styles/global.css'
 import '@fontsource/michroma';
 import '@fontsource-variable/quicksand';
 import '@fontsource-variable/roboto-mono';
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -14,6 +15,7 @@ import '@fontsource-variable/roboto-mono';
 		<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>Portafolio</title>
+		<ClientRouter/>
 	</head>
 	<body>
 		<slot />
@@ -25,9 +27,6 @@ import '@fontsource-variable/roboto-mono';
 		font-family: 'Roboto Mono Variable', monospace;
 	}
 	body {
-		display: flex;
-		justify-content: center;
-		height: 100vh;
 		background-color: var(--background-color);
 	}
 </style>

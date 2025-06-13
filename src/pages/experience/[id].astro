@@ -8,6 +8,7 @@ import ButtonLink from "../../shared/components/ButtonLink/ButtonLink";
 import Footer from "../../components/Footer.astro";
 import Projects from "../../components/experience/Projects.astro";
 
+
 export async function getStaticPaths() {
 	const experiences: Experience[] = await getCollection("experience");
 
@@ -42,17 +43,17 @@ if (end_date != null) {
 
 <Layout>
 	<main
-		class="[background:radial-gradient(100%_21%_at_30%_2%,#A3B9A2_20%,#0D0D0D_100%)]"
+		class="[background:radial-gradient(100%_21%_at_30%_2%,#F472B6_20%,#0D0D0D_100%)]"
 		role="main"
 		aria-label="Detalle de experiencia laboral"
 	>
-		<Header title={position} company={company} />
-		<section class="flex justify-center flex-col items-center">
+		<Header  title={position} company={company} />
+		<section class=" flex justify-center flex-col items-center">
 			<article class="text-wasabi p-3.5">
 				<span>{location}</span>
 				<span>{start_date.concat(",", finishDate)}</span>
 			</article>
-			<div class="w-5/6 h-full grid grid-cols-1 gap-10">
+			<div class="w-5/6 mt-10  grid grid-cols-1 gap-10">
 				{
 					Array.isArray(projects) && projects.length > 0 ? (
 						projects.map((project: Project, index: number) => (
@@ -69,6 +70,8 @@ if (end_date != null) {
 					)
 				}
 			</div>
-		</section>
+		<section class="w-5/6 mt-10">
+		</section>			
+		<Footer></Footer>
 	</main>
 </Layout>

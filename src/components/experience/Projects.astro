@@ -10,11 +10,14 @@ const { title, skills, description, link } = Astro.props;
     class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
 >
     <header class="mb-2">
-        <h2 class="text-wasabi text-2xl font-semibold">
+        <h2 class="text-wasabi font-bold text-xl">
             {title}
         </h2>
     </header>
+            <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
+
     <div class="mt-7">
+
         {
             skills.map((skill: string) => {
                 return <Chip skill={skill} />;
@@ -25,8 +28,11 @@ const { title, skills, description, link } = Astro.props;
         <p class="text-rice">
             {description}
         </p>
+        <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
+
     </div>
-    <div>
+
+    <div class="mt-2">
         <ButtonLink link={link} type="secundary"> Visitar </ButtonLink>
     </div>
 </article>
