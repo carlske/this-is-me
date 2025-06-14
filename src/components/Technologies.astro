@@ -18,6 +18,15 @@ import TypeScript from "../icons/technologies/front/TypeScript.astro";
 import Sass from "../icons/technologies/front/Sass.astro";
 import Redux from "../icons/technologies/front/Redux.astro";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
+import { useTranslations } from "../i18n/uitls";
+import type { languages } from "../i18n/ui";
+
+
+const currentLang = Astro.currentLocale || "es"
+
+const translate = useTranslations(
+    currentLang as keyof typeof languages
+)
 ---
 
 <section class="w-screen">
@@ -28,7 +37,7 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
             lineColor="pink"
             className=""
             animation="true"
-            position="center">Tecnologías</HeadingWithLine
+            position="center">{translate('technologies.header')}</HeadingWithLine
         >
     </nav>
 

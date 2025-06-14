@@ -15,18 +15,17 @@ const { title, skills, description, link } = Astro.props;
             {title}
         </h2>
     </header>
-    
+
     <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
 
     <section class="mt-7">
-        <ChipList skills={skills}></ChipList>
+        <ChipList skills={skills} client:load />
     </section>
     <section class="mt-4 p-2 text-sm">
         <p class="text-rice">
             {description}
         </p>
         <div class="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
-
     </section>
 
     <section class="mt-2">

@@ -13,6 +13,8 @@ skills:
   - PHP
   - JS
   - CSS
+  - Prestashop
+  - Backend
 projects:
   - title: Decathlon E-commerce Platform
     description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
@@ -20,6 +22,8 @@ projects:
       - Svelte
       - TailwindCSS
       - Php
+      - Prestashop
+      - Backend
     link: "https://www.decathlon.com.mx"
     private: true
   - title: ShipperBox
