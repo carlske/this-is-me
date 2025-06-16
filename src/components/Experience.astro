@@ -25,7 +25,7 @@ const experiences = await getCollection("experience");
         <div class="w-5/6 grid grid-cols-1 gap-1">
             {
                 experiences.map((experience : Experience , i : number) => {
-                    const {  data } = experience 
+                    const {  data } = experience
 
                     const {
                         position,
@@ -51,6 +51,7 @@ const experiences = await getCollection("experience");
                             skills={skills.join(',')}
                             id={id}
                             url={website}
+                            client:load
                         >
                             <span
                             >
@@ -58,7 +59,7 @@ const experiences = await getCollection("experience");
                             </span>
                         </Card>
                         <div>
-                            {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/> } 
+                            {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  } 
                         </div>                        
                     );
                 })

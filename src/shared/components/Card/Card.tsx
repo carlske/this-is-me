@@ -1,6 +1,5 @@
-import ButtonLink from "../ButtonLink/ButtonLink"
-import Chip from "../Chip/Chip"
-import ChipList from "../ChipList/ChipList"
+import { ChipList } from "../Chips/Chips"
+import { LinkSecundary } from "../Links/Links"
 
 interface CardProps {
     children: React.ReactNode
@@ -35,7 +34,7 @@ const Card = ({ children, date, company, skills, id, url }: CardProps) => {
         <div className="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
 
         <div className="flex flex-row justify-around mt-5">
-            <ButtonLink link={`./experience/${id}`} type="secundary">Ver mas</ButtonLink>
+            <LinkSecundary link={`./experience/${id}`} >Ver mas</LinkSecundary>
         </div>
 
     </article>

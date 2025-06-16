@@ -1,8 +1,6 @@
 ---
-import ButtonLink from "../../shared/components/ButtonLink/ButtonLink";
-import Chip from "../../shared/components/Chip/Chip";
-import ChipList from "../../shared/components/ChipList/ChipList";
-import type { Project } from "../../shared/types/Experience";
+import { ChipList } from "../../shared/components/Chips/Chips"
+import { LinkSecundary } from '../../shared/components/Links/Links'
 
 const { title, skills, description, link } = Astro.props;
 ---
@@ -29,6 +27,6 @@ const { title, skills, description, link } = Astro.props;
     </section>
 
     <section class="mt-2">
-        <ButtonLink link={link} type="secundary">Visitar</ButtonLink>
+            <LinkSecundary link={link} >Visitar</LinkSecundary>
     </section>
 </article>
