@@ -142,16 +142,6 @@ p strong {
 @layer components {
 
     .card {
-        padding: 1em;
-        background: var(--color-industrial);
-        color: var(--color-rice);
-        border-top: none;
-        border-bottom: none;
-        border-left: 3px solid var(--color-wasabi);
-        border-right: 3px solid var(--color-wasabi);
-    }
-
-    .card {
         view-timeline-name: --reveal;
         animation-name: show;
         animation-fill-mode: both;

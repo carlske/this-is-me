@@ -4,8 +4,9 @@ import Layout from "../../../layouts/Layout.astro";
 import type { Experience, Project } from "../../../shared/types/Experience";
 import Header from "../../../components/experience/Header.astro";
 import Footer from "../../../components/Footer.astro";
-import Projects from "../../../components/experience/Projects.astro";
 import CalendarIcon from "../../../icons/CalendarIcon.astro";
+import { CardProject } from "../../../shared/components/Cards/Cards";
+import ArrowCard from "../../../components/shared/ArrowCard.astro";
 
 export async function getStaticPaths() {
 	const experiences: Experience[] = await getCollection("experience");
@@ -18,14 +19,7 @@ export async function getStaticPaths() {
 
 const { data } = Astro.props;
 
-const {
-	position,
-	company,
-	start_date,
-	end_date,
-	location,
-	projects,
-} = data;
+const { position, company, start_date, end_date, location, projects } = data;
 
 let finishDate = "now";
 
@@ -42,7 +36,9 @@ if (end_date != null) {
 	>
 		<Header title={position} company={company} />
 		<section class="flex justify-center flex-col items-center">
-			<article class="text-wasabi p-3.5 flex gap-4 items-center justify-center">
+			<article
+				class="text-wasabi p-3.5 flex gap-4 items-center justify-center"
+			>
 				<CalendarIcon class="w-6 h-6" />
 				<div>
 					<span>{location}</span>
@@ -52,14 +48,18 @@ if (end_date != null) {
 			<div class="w-5/6 mt-10 grid grid-cols-1 gap-10">
 				{
 					Array.isArray(projects) && projects.length > 0 ? (
-						projects.map((project: Project, index: number) => (
-							<Projects
-								key={index}
+						projects.map((project: Project, i: number) => (
+							<CardProject
 								title={project.title}
+								skills={project.tech.join(",")}
+								startDate={start_date}
+								finishDate={finishDate}
 								link={project.link}
-								skills={project.tech}
-								description={project.description}
+								client:load
 							/>
+						<div>
+                            {i !== (projects.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  } 
+                        </div> 
 						))
 					) : (
 						<p>No hay proyectos disponibles.</p>

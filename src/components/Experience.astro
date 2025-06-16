@@ -1,6 +1,6 @@
 ---
 import ArrowCard from "../components/shared/ArrowCard.astro";
-import Card from "../shared/components/Card/Card";
+import {CardExperience} from "../shared/components/Cards/Cards";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 import { getCollection } from "astro:content";
 import type { Experience } from "../shared/types/Experience";
@@ -33,7 +33,6 @@ const experiences = await getCollection("experience");
                         employment_type,
                         start_date,
                         end_date,
-                        website,
                         skills,
                         id,
                     } = data;
@@ -45,19 +44,16 @@ const experiences = await getCollection("experience");
                     }
 
                     return (
-                        <Card
+                        <CardExperience
                             company={company.concat(' · ',employment_type) }
-                            date={start_date.concat(',',finishDate)}
+                            startDate={start_date}
+                            finishDate={finishDate}
                             skills={skills.join(',')}
-                            id={id}
-                            url={website}
+                            pageId={id}
+                            position={position}
                             client:load
                         >
-                            <span
-                            >
-                                {position}
-                            </span>
-                        </Card>
+                        </CardExperience>
                         <div>
                             {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  } 
                         </div>                        

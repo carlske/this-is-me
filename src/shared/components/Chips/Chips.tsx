@@ -3,7 +3,6 @@ interface ChipProps {
 }
 
 
-
 interface ChipListProps {
     skills: string[]
 }
