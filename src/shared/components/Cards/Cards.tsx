@@ -31,17 +31,17 @@ interface CardProjectProps {
 
 const Card = ({ children, skills, url, linkText, title }: CardBaseProps) => {
     return <article
-        className="card p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+        className="card p-4 rounded bg-rice  dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
     >
         <header className="mb-2">
-            <h2 className="text-wasabi font-bold text-xl">
+            <h2 className="dark:text-wasabi text-matcha font-bold text-xl">
                 {title}
             </h2>
         </header>
 
-        <div className="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
+        <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
 
-        <section className="mt-4 p-2 text-sm text-rice">
+        <section className="mt-4 p-2 text-sm text-shadow-deep-black dark:text-rice">
             {children}
         </section>
 
@@ -49,7 +49,7 @@ const Card = ({ children, skills, url, linkText, title }: CardBaseProps) => {
             <ChipList skills={skills.split(',')} />
         </section>
 
-        <div className="h-[3px] w-full mt-4 opacity-10 bg-wasabi"></div>
+        <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
 
 
         <section className="flex flex-row justify-around mt-5">
@@ -77,7 +77,7 @@ export const CardExperience = ({ startDate, finishDate, company, skills, pageId,
             <span>{company}</span>
             <span>{dateExperience}</span>
         </div>
-        <div className="h-[3px] w-full  mt-4 opacity-10 bg-wasabi"></div>
+        <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
 
         <div className="mt-4 p-1">
             <p>I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work doing Frontend, Php and Python solutions</p>

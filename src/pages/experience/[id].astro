@@ -7,6 +7,7 @@ import Footer from "../../components/Footer.astro";
 import CalendarIcon from "../../icons/CalendarIcon.astro";
 import { CardProject } from "../../shared/components/Cards/Cards";
 import ArrowCard from "../../components/shared/ArrowCard.astro";
+import NavBar from "../../components/NavBar.astro";
 
 export async function getStaticPaths() {
 	const experiences: Experience[] = await getCollection("experience");
@@ -29,15 +30,16 @@ if (end_date != null) {
 ---
 
 <Layout>
+	<NavBar/>
 	<main
-		class="[background:radial-gradient(100%_20%_at_20%_1%,#F472B6_20%,#0D0D0D_100%)]"
+		class="[background:radial-gradient(100%_20%_at_20%_1%,#F472B6_20%,#0D0D0D_100%)] dark:[background:radial-gradient(100%_20%_at_20%_1%,#F472B6_1%,#0D0D0D_100%)]"
 		role="main"
 		aria-label="Detalle de experiencia laboral"
 	>
 		<Header title={position} company={company} />
 		<section class="flex justify-center flex-col items-center">
 			<article
-				class="text-wasabi p-3.5 flex gap-4 items-center justify-center"
+				class="text-rice p-3.5 flex gap-4 items-center justify-center"
 			>
 				<CalendarIcon class="w-6 h-6" />
 				<div>

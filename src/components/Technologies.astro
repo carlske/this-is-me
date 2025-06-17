@@ -21,12 +21,9 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
 import { useTranslations } from "../i18n/uitls";
 import type { languages } from "../i18n/ui";
 
+const currentLang = Astro.currentLocale || "es";
 
-const currentLang = Astro.currentLocale || "es"
-
-const translate = useTranslations(
-    currentLang as keyof typeof languages
-)
+const translate = useTranslations(currentLang as keyof typeof languages);
 ---
 
 <section class="w-screen">
@@ -37,24 +34,23 @@ const translate = useTranslations(
             lineColor="pink"
             className=""
             animation="true"
-            position="center">{translate('technologies.header')}</HeadingWithLine
+            position="center"
+            >{translate("technologies.header")}</HeadingWithLine
         >
     </nav>
 
     <div class="flex justify-center flex-col items-center">
-        <div
-            class="text-rice text-base w-5/6  px-6 sm:px-12   mb-10"
-        >
+        <div class="text-rice text-base w-5/6 px-6 sm:px-12 mb-10">
             <p>
-                {translate('technologies.description')}
+                {translate("technologies.description")}
             </p>
             <p>
-                {translate('technologies.description2')}
+                {translate("technologies.description2")}
             </p>
         </div>
         <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
-                class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+                class="p-4 rounded bg-rice dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
             >
                 <HeadingWithLine
                     tag="h3"
@@ -65,7 +61,7 @@ const translate = useTranslations(
                     position="baseline">Front End</HeadingWithLine
                 >
                 <div
-                    class="text-rice grid grid-cols-2 gap-6 justify-items-center mt-4"
+                    class="dark:text-rice text-industrial grid grid-cols-2 gap-6 justify-items-center mt-4"
                 >
                     <div class="flex justify-center flex-col items-center">
                         <JavaScript class="w-15 h-15" />
@@ -102,7 +98,7 @@ const translate = useTranslations(
                 </div>
             </div>
             <div
-                class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+                class="p-4 rounded bg-rice dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
             >
                 <HeadingWithLine
                     tag="h3"
@@ -113,7 +109,7 @@ const translate = useTranslations(
                     position="baseline">Back End</HeadingWithLine
                 >
                 <div
-                    class="text-rice grid grid-cols-2 gap-6 justify-items-center mt-4"
+                    class="dark:text-rice text-industrial grid grid-cols-2 gap-6 justify-items-center mt-4"
                 >
                     <div class="flex justify-center flex-col items-center">
                         <Java class="w-15 h-15" />
@@ -144,7 +140,7 @@ const translate = useTranslations(
                 </div>
             </div>
             <div
-                class="p-4 rounded bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+                class="p-4 rounded bg-rice dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
             >
                 <HeadingWithLine
                     tag="h3"
@@ -155,7 +151,7 @@ const translate = useTranslations(
                     position="baseline">Herramientas</HeadingWithLine
                 >
                 <div
-                    class="text-rice grid grid-cols-2 gap-6 justify-items-center mt-4"
+                    class="dark:text-rice text-industrial grid grid-cols-2 gap-6 justify-items-center mt-4"
                 >
                     <div class="flex justify-center flex-col items-center">
                         <Pnpm class="w-15 h-15" />

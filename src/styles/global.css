@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+
 @theme {
     --color-*: initial;
     --color-deep-black: #0D0D0D;
@@ -32,7 +35,7 @@ p {
 }
 
 p strong {
-    @apply font-semibold text-matcha;
+    @apply font-bold text-matcha;
 }
 
 .item {
