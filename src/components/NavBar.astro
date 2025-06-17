@@ -1,8 +1,17 @@
 ---
+import BackHome from "../icons/BackHome.astro";
 import ThemeSwitcher from "../shared/components/ThemeSwitcher/ThemeSwitcher";
+
+const { returnHome } = Astro.props;
 ---
 
-<nav class="absolute w-full p-3">
-<ThemeSwitcher client:load/>
+<nav class="absolute flex flex-row justify-between w-full p-3">
+    <a href="/">
+        {
+            returnHome === 'true' && (
+                <BackHome class="w-10 h-10 text-rice hover:text-matcha hover:cursor-pointer" />
+            )
+        }
+    </a>
+    <ThemeSwitcher client:load />
 </nav>
-
