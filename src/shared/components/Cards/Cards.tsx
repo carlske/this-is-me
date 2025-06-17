@@ -22,7 +22,7 @@ interface CardExperienceProps {
 interface CardProjectProps {
     title: string
     startDate: string
-    finishDate: string | null
+    finishDate: string 
     skills: string
     link: string | undefined
 }
@@ -89,9 +89,8 @@ export const CardExperience = ({ startDate, finishDate, company, skills, pageId,
 
 export const CardProject = ({ startDate, finishDate, title, skills, link }: CardProjectProps) => {
 
-    const dateExperience = startDate.concat(',', finishDate)
-
-
+    const dateExperience :string = startDate.concat(',', finishDate)
+    
     return <Card
         skills={skills}
         url={link}
