@@ -11,10 +11,10 @@ interface HeadingWithLineProps {
 }
 
 const colorMap = {
-    matcha: 'text-matcha',
+    matcha: 'dark:text-matcha text-core-pink',
     pink: 'text-core-pink',
-    wasabi: 'text-wasabi',
-    rice: 'text-rice',
+    wasabi: 'dark:text-wasabi text-core-pink',
+    rice: 'dark:text-rice text-industrial',
 };
 
 

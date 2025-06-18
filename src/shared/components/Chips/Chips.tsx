@@ -1,3 +1,5 @@
+import type React from "react";
+
 interface ChipProps {
     skill: string
 }
@@ -5,7 +7,9 @@ interface ChipProps {
 
 interface ChipListProps {
     skills: string[]
+
 }
+
 
 
 export const Chip = ({ skill }: ChipProps) => {
@@ -16,22 +20,27 @@ export const Chip = ({ skill }: ChipProps) => {
 export const ChipButton = () => {
 
     const shoeMoreChips = () => {
-        alert('You clicked me!');
+        console.log("wow")
     }
 
-    return <span className="bg-wasabi hover:cursor-pointer hover:bg-matcha text-deep-black font-bold rounded-lg p-2 mr-1.5 text-xs " onClick={shoeMoreChips} >Show more
+    return <span className="dark:bg-wasabi  bg-rice hover:bg-core-pink hover:cursor-pointer dark:hover:bg-matcha dark:text-deep-black font-bold rounded-lg p-2 mr-1.5 text-xs " onClick={shoeMoreChips} >Show more
     </span>
 
         ;
 }
 
 export const ChipList = ({ skills }: ChipListProps) => {
-  return (
-    <>
-      {skills.slice(0, 2).map((skill) => (
-        <Chip key={skill} skill={skill} />
-      ))}
-      <ChipButton/>
-    </>
-  );
+
+    const modalOpen = (data: boolean) => {
+    }
+
+
+    return (
+        <>
+            {skills.slice(0, 2).map((skill) => (
+                <Chip key={skill} skill={skill} />
+            ))}
+            <ChipButton />
+        </>
+    );
 };

@@ -20,14 +20,15 @@ import Redux from "../icons/technologies/front/Redux.astro";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 import { useTranslations } from "../i18n/uitls";
 import type { languages } from "../i18n/ui";
+import TtitleSection from "./shared/TtitleSection.astro";
 
 const currentLang = Astro.currentLocale || "es";
 
 const translate = useTranslations(currentLang as keyof typeof languages);
 ---
 
-<section class="w-screen">
-    <nav class="title-header">
+<section class="w-screen bg-rice dark:bg-deep-black">
+    <TtitleSection>
         <HeadingWithLine
             tag="h2"
             color="rice"
@@ -37,10 +38,10 @@ const translate = useTranslations(currentLang as keyof typeof languages);
             position="center"
             >{translate("technologies.header")}</HeadingWithLine
         >
-    </nav>
+    </TtitleSection>
 
     <div class="flex justify-center flex-col items-center">
-        <div class="text-rice text-base w-5/6 px-6 sm:px-12 mb-10">
+        <div class="dark:text-rice text-industrial text-base w-5/6 px-6 sm:px-12 mb-10">
             <p>
                 {translate("technologies.description")}
             </p>

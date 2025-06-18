@@ -1,25 +1,22 @@
 ---
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 import Footer from "./Footer.astro";
-import LinkedInIcon from "../icons/LinkedInIcon.astro";
-import GithubIcon from "../icons/GithubIcon.astro";
-import MailIcon from "../icons/MailIcon.astro";
 import AboutMe from "./AboutMe.astro";
 import Technologies from "./Technologies.astro";
 import Experience from "./Experience.astro";
-import Link from "./shared/Link.astro";
 import FlatIcon from "../icons/FlatIcon.astro";
 import NavBar from "./NavBar.astro";
+import Media from "./Media.astro";
 ---
 
 <div id="container">
-	<NavBar/>
-	<main class="w-full ">
-		<section
-			class="w-screen [background:radial-gradient(100%_21%_at_30%_10%,#A3B9A2_60%,#0D0D0D_100%)]
+	<NavBar />
+	<main class="w-full">
+		<article
+			class="w-screen [background:radial-gradient(100%_21%_at_30%_10%,#A3B9A2_30%,#F5F3F0_100%)]
          dark:[background:radial-gradient(100%_20%_at_30%_2%,#A3B9A2_1%,#0D0D0D_100%)] h-dvh flex flex-col justify-center items-center"
 		>
-			<div class=" w-5/6  p-3">
+			<div class="w-5/6 p-3">
 				<HeadingWithLine
 					tag="h1"
 					color="rice"
@@ -36,35 +33,22 @@ import NavBar from "./NavBar.astro";
 					animation="true"
 					position="baseline">Frontend Developer</HeadingWithLine
 				>
-				<p class="text-rice text-base sm:text-xl mt-10">
+				<p class="dark:text-rice text-industrial text-base sm:text-xl mt-10">
 					Me apasiona crear software <strong>eficiente</strong>, <strong
-						>escalable</strong>
-					 y orientado a brindar la mejor <strong
+						>escalable</strong
+					>
+					y orientado a brindar la mejor <strong
 						>experiencia de usuario</strong
 					>.
 				</p>
 				<div class="flex items-center gap-5">
-					<FlatIcon class="w-10 h-10 text-core-pink" />
-					<spa class="text-matcha text-sm">Disponible para nuevas oportunidades</spa>
+					<FlatIcon class="w-10 h-10 dark:text-core-pink text-matcha" />
+					<span class="dark:text-matcha text-industrial text-sm"
+						>Disponible para nuevas oportunidades</span>
 				</div>
-				<div class="grid-simple sm:[--cols:3]">
-					<Link
-						href="https://www.linkedin.com/in/carlos-v-d-365394127/"
-						title="LinkedIn"
-					>
-						<LinkedInIcon class="w-7 h-7" />
-					</Link>
-					<Link href="https://github.com/carlske" title="Github">
-						<GithubIcon class="w-7 h-7" />
-					</Link>
-					<Link
-						href="mailto:fernancarldiaz@outlook.com"
-						title="Correo"
-					>
-						<MailIcon class="w-7 h-7" />
-					</Link>
-				</div>
-		</section>
+				<Media />
+			</div>
+		</article>
 
 		<Experience />
 		<Technologies />

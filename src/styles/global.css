@@ -19,11 +19,10 @@
 
 
 :root {
-    background-color: var(--color-deep-black);
+    background-color: var(--color-rice);
 }
 
 @utility grid-simple {
-    color: var(--color-matcha);
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--gap, 1rem);
@@ -42,7 +41,6 @@ p strong {
     padding: 1.5rem;
     display: flex;
     justify-content: center;
-    color: var(--color-wasabi);
     cursor: pointer;
     border-radius: 12px;
     border: 3px solid var(--color-core-pink);
@@ -104,8 +102,8 @@ p strong {
 
     .letter-line h3 {
         font-family: 'Quicksand Variable', sans-serif;
-        font-weight: 400;
-        font-size: calc(12px + 2vw);
+        font-weight: 500;
+        font-size: clamp(2rem, 2vw, 1rem);
     }
 
     .letter-line p {
@@ -200,7 +198,7 @@ p strong {
 .title-header {
     padding: 2em;
     position: sticky;
-    background-color: var(--color-deep-black);
+    background-color: var(--color-rice);
     top: 0;
     bottom: 0;
     z-index: 1;

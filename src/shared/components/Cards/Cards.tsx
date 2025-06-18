@@ -31,10 +31,10 @@ interface CardProjectProps {
 
 const Card = ({ children, skills, url, linkText, title }: CardBaseProps) => {
     return <article
-        className="card p-4 rounded bg-rice  dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+        className="card p-4 rounded bg-wasabi opacity-100  dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
     >
         <header className="mb-2">
-            <h2 className="dark:text-wasabi text-matcha font-bold text-xl">
+            <h2 className="dark:text-wasabi text-rice font-bold text-xl">
                 {title}
             </h2>
         </header>

@@ -4,13 +4,14 @@ import {CardExperience} from "../shared/components/Cards/Cards";
 import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
 import { getCollection } from "astro:content";
 import type { Experience } from "../shared/types/Experience";
+import TtitleSection from "./shared/TtitleSection.astro";
 
 const experiences = await getCollection("experience");
 
 ---
 
-<section class="w-screen">
-    <nav class="title-header">
+<section class="w-screen bg-rice dark:bg-deep-black">
+    <TtitleSection>
         <HeadingWithLine
             tag="h2"
             color="rice"
@@ -19,8 +20,7 @@ const experiences = await getCollection("experience");
             animation="true"
             position="center">Experiencia</HeadingWithLine
         >
-    </nav>
-
+    </TtitleSection>
     <div class="flex justify-center">
         <div class="w-5/6 grid grid-cols-1 gap-1">
             {

@@ -3,12 +3,13 @@ import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLin
 import Foto from "../assets/me.jpg?url";
 import Astro from "../icons/technologies/front/Astro.astro";
 import React from "../icons/technologies/front/React.astro";
+import TtitleSection from "./shared/TtitleSection.astro";
 ---
 
 <section
-    class="w-screen [background:radial-gradient(125%_125%_at_50%_10%,#0D0D0D_40%,#A3B9A2_100%)]"
+    class="w-screen [background:radial-gradient(125%_125%_at_50%_10%,#F5F3F0_40%,#A3B9A2_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#0D0D0D_40%,#A3B9A2_100%)]"
 >
-    <nav class="title-header">
+    <TtitleSection>
         <HeadingWithLine
             tag="h2"
             color="rice"
@@ -17,7 +18,7 @@ import React from "../icons/technologies/front/React.astro";
             animation="true"
             position="center">Sobre mí</HeadingWithLine
         >
-    </nav>
+    </TtitleSection>
 
     <div class="flex justify-center flex-col items-center mt-[3rem]">
         <img

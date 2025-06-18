@@ -23,10 +23,10 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={() => setDarkMode((prev) => !prev)}
-            className={`cursor-pointer float-right relative inline-flex items-center h-6 w-11 rounded-full transition-colors duration-300 ${darkMode ? "bg-industrial" : "bg-rice"}`}
+            className={`mt-1 cursor-pointer float-right relative inline-flex items-center h-6 w-11 rounded-full transition-colors duration-300 ${darkMode ? "bg-industrial" : "bg-matcha"}`}
         >
             <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-industrial dark:bg-rice transition-transform duration-300 ${darkMode ? "translate-x-6" : "translate-x-1"}`}
+                className={`inline-block h-4 w-4 transform rounded-full bg-industrial dark:bg-matcha transition-transform duration-300 ${darkMode ? "translate-x-6" : "translate-x-1"}`}
             />
         </button>
     );

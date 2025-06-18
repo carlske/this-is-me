@@ -6,16 +6,16 @@ import HeadingWithLine from "../../shared/components/HeadingWithLine/HeadingWith
 const { title, company } = Astro.props;
 ---
 
-<section class="p-4">
-
-    <h1 class="mt-12 text-rice text-5xl md:text-6xl font-bold">{title}</h1>
-
-    <HeadingWithLine
-        tag="h2"
-        color="matcha"
-        lineColor="wasabi"
-        className=""
-        animation="false"
-        position="center">{company}</HeadingWithLine
-    >
+<section class="p-4 w-5/6 flex flex-col justify-center items-center">
+    <div>
+        <h1 class="mt-12 text-deep-black dark:text-rice text-5xl md:text-6xl font-bold">{title}</h1>
+        <HeadingWithLine
+            tag="h2"
+            color="matcha"
+            lineColor="wasabi"
+            className=""
+            animation="true"
+            position="center">{company}</HeadingWithLine
+        >
+    </div>
 </section>
