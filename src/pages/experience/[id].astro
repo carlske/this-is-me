@@ -1,14 +1,14 @@
 ---
-import { getCollection, render } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import type { Experience, Project } from "../../shared/types/Experience";
-import Header from "../../components/experience/Header.astro";
-import Footer from "../../components/Footer.astro";
-import CalendarIcon from "../../icons/CalendarIcon.astro";
-import { CardProject } from "../../shared/components/Cards/Cards";
-import ArrowCard from "../../components/shared/ArrowCard.astro";
-import NavBar from "../../components/NavBar.astro";
-import Media from "../../components/Media.astro";
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import type { Experience, Project } from "@/shared/types/Experience";
+import Header from "@/components/experience/Header.astro";
+import Footer from "@/components/Footer.astro";
+import CalendarIcon from "@/icons/CalendarIcon.astro";
+import { CardProject } from "@/shared/components/Cards/Cards";
+import ArrowCard from "@/components/shared/ArrowCard.astro";
+import NavBar from "@/components/NavBar.astro";
+import Media from "@/components/Media.astro";
 
 export async function getStaticPaths() {
 	const experiences: Experience[] = await getCollection("experience");

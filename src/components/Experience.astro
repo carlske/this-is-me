@@ -1,10 +1,10 @@
 ---
-import ArrowCard from "../components/shared/ArrowCard.astro";
-import {CardExperience} from "../shared/components/Cards/Cards";
-import HeadingWithLine from "../shared/components/HeadingWithLine/HeadingWithLine";
+import ArrowCard from "@/components/shared/ArrowCard.astro";
+import {CardExperience} from "@/shared/components/Cards/Cards";
+import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
 import { getCollection } from "astro:content";
-import type { Experience } from "../shared/types/Experience";
-import TtitleSection from "./shared/TtitleSection.astro";
+import type { Experience } from "@/shared/types/Experience";
+import TtitleSection from "@/components/shared/TtitleSection.astro";
 
 const experiences = await getCollection("experience");
 

@@ -1,4 +1,4 @@
-import { Children, isValidElement } from "react";
+import { isValidElement } from "react";
 
 interface HeadingWithLineProps {
     children: React.ReactNode;

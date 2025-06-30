@@ -9,6 +9,10 @@
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "jsxImportSource": "react",
     "strictNullChecks": true,
     "allowJs": true 
