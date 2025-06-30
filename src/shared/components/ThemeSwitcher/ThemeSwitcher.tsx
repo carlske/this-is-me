@@ -22,6 +22,7 @@ const ThemeToggle = () => {
 
     return (
         <button
+            aria-label="change theme"
             onClick={() => setDarkMode((prev) => !prev)}
             className={`mt-1 cursor-pointer float-right relative inline-flex items-center h-6 w-11 rounded-full transition-colors duration-300 ${darkMode ? "bg-industrial" : "bg-matcha"}`}
         >

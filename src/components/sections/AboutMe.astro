@@ -1,0 +1,55 @@
+---
+import Foto from "@/assets/me.webp?url";
+import ProfileSection from "@/layouts/ProfileSection.astro";
+---
+
+<ProfileSection
+    id="sobre mi"
+    heading="Sobre mi"
+    className="flex-col items-center mt-[3rem]"
+>
+    <img
+        src={Foto}
+        alt="carlos V foto"
+        class="w-2xs aspect-square rounded-full object-cover"
+        width={200}
+        height={200}
+        loading="lazy"
+    />
+    <div class="w-5/6">
+        <div class="h-[3px] mt-10 opacity-10 bg-wasabi"></div>
+
+        <div
+            class="dark:bg-industrial bg-rice mt-10 mb-10 p-8 dark:text-rice text-industrial"
+        >
+            <p>
+                <strong>Desarrollador de software</strong> con experiencia en el
+                desarrollo de soluciones tanto de <strong>front-end</strong> como
+                de <strong>back-end</strong>.
+            </p>
+            <p>
+                Actualmente trabajo en la <strong
+                    >industria del comercio electrónico</strong
+                >, creando aplicaciones con <strong>React</strong>, <strong
+                    >Svelte</strong
+                >,
+                <strong>Spring Boot</strong> y <strong>Web Components</strong>.
+            </p>
+            <p>
+                También he participado en <strong
+                    >proyectos para el sector bancario</strong
+                >, desarrollando soluciones en <strong>front-end</strong> y <strong
+                    >back-end</strong
+                >, utilizando <strong>Java</strong>, <strong>JavaScript</strong
+                >, <strong>PHP</strong> y <strong>Python</strong>.
+            </p>
+            <p>
+                Me apasiona crear <strong>software eficiente</strong>, <strong
+                    >escalable</strong
+                > y orientado a brindar la <strong
+                    >mejor experiencia de usuario</strong
+                >.
+            </p>
+        </div>
+    </div>
+</ProfileSection>

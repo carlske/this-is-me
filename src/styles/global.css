@@ -165,29 +165,29 @@ p strong {
 
 @layer components {
 
-    .button {
+    .link {
         padding: 0.5em;
         border-radius: 1em;
         cursor: pointer;
 
     }
 
-    .button.primary {
+    .link.primary {
         border: 3px solid var(--color-wasabi);
     }
 
-    .button.primary:hover {
+    .link.primary:hover {
         border: 3px solid var(--color-matcha);
         background-color: var(--color-matcha);
         color: var(--color-deep-black)
     }
 
-    .button.secundary {
+    .link.secondary {
         background-color: var(--color-matcha);
         color: var(--color-deep-black)
     }
 
-    .button.secundary:hover {
+    .link.secondary:hover {
         opacity: 90%;
     }
 }

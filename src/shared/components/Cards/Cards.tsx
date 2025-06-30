@@ -1,5 +1,7 @@
 import { ChipList } from "../Chips/Chips"
-import { LinkSecundary } from "../Links/Links"
+import { Link } from "../Links/Links"
+
+type TypeCardVariant = 'experience' | 'project'
 
 interface CardBaseProps {
     skills: String
@@ -7,6 +9,7 @@ interface CardBaseProps {
     linkText: string
     title: string
     children: React.ReactNode
+    typeCard: TypeCardVariant
 }
 
 
@@ -22,14 +25,14 @@ interface CardExperienceProps {
 interface CardProjectProps {
     title: string
     startDate: string
-    finishDate: string 
+    finishDate: string
     skills: string
     link: string | undefined
 }
 
 
 
-const Card = ({ children, skills, url, linkText, title }: CardBaseProps) => {
+const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProps) => {
     return <article
         className="card p-4 rounded bg-wasabi opacity-100  dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
     >
@@ -53,7 +56,8 @@ const Card = ({ children, skills, url, linkText, title }: CardBaseProps) => {
 
 
         <section className="flex flex-row justify-around mt-5">
-            <LinkSecundary link={url} >{linkText}</LinkSecundary>
+            <Link variant="secondary" target={typeCard === 'experience' ? '_self' : '_blank'}
+                ariaLabel={`Conoce mas acerca mi experiencia como de ${title} `} href={url} >{linkText}</Link>
         </section>
     </article>
 
@@ -72,6 +76,7 @@ export const CardExperience = ({ startDate, finishDate, company, skills, pageId,
         url={urlPage}
         title={position}
         linkText="Ver mas"
+        typeCard="experience"
     >
         <div className="text-xs flex flex-col">
             <span>{company}</span>
@@ -89,13 +94,14 @@ export const CardExperience = ({ startDate, finishDate, company, skills, pageId,
 
 export const CardProject = ({ startDate, finishDate, title, skills, link }: CardProjectProps) => {
 
-    const dateExperience :string = startDate.concat(',', finishDate)
-    
+    const dateExperience: string = startDate.concat(',', finishDate)
+
     return <Card
         skills={skills}
         url={link}
         title={title}
         linkText="Ver mas"
+        typeCard="project"
     >
         <div className="mt-4 p-1">
             <p>I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work doing Frontend, Php and Python solutions</p>

@@ -5,23 +5,13 @@ import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine
 import { getCollection } from "astro:content";
 import type { Experience } from "@/shared/types/Experience";
 import TtitleSection from "@/components/shared/TtitleSection.astro";
+import ProfileSection from "@/layouts/ProfileSection.astro";
 
 const experiences = await getCollection("experience");
 
 ---
 
-<section class="w-screen bg-rice dark:bg-deep-black">
-    <TtitleSection>
-        <HeadingWithLine
-            tag="h2"
-            color="rice"
-            lineColor="pink"
-            className=""
-            animation="true"
-            position="center">Experiencia</HeadingWithLine
-        >
-    </TtitleSection>
-    <div class="flex justify-center">
+<ProfileSection id="experience" heading="Experiencia">
         <div class="w-5/6 grid grid-cols-1 gap-1">
             {
                 experiences.map((experience : Experience , i : number) => {
@@ -56,10 +46,9 @@ const experiences = await getCollection("experience");
                         </CardExperience>
                         <div>
                             {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  } 
-                        </div>                        
+                        </div>  
                     );
                 })
             }
         </div>
-    </div>
-</section>
+</ProfileSection>

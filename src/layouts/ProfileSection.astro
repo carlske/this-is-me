@@ -1,0 +1,26 @@
+---
+import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
+import { undefined } from "astro:schema";
+const { children, id, heading, className } = Astro.props;
+---
+
+<section
+    class="w-screen bg-rice dark:bg-deep-black"
+    aria-label={`${heading}-seccion`}
+>
+    <article class="sticky top-0 bottom-0 z-10 p-8 bg-rice dark:bg-deep-black">
+        <HeadingWithLine
+            tag="h2"
+            color="rice"
+            lineColor="pink"
+            className=""
+            animation="true"
+            position="center">{heading}</HeadingWithLine
+        >
+    </article>
+    <div
+        class={`${className !== "undefined" ? className : ""} flex justify-center`}
+    >
+        <slot />
+    </div>
+</section>
