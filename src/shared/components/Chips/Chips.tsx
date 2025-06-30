@@ -22,7 +22,7 @@ export const ChipButton = () => {
         console.log("wow")
     }
 
-    return <span className="dark:bg-wasabi  bg-rice hover:bg-core-pink hover:cursor-pointer dark:hover:bg-matcha dark:text-deep-black font-bold rounded-lg p-2 mr-1.5 text-xs " onClick={shoeMoreChips} >Show more
+    return <span className="dark:bg-wasabi  bg-rice hover:opacity-80 hover:cursor-pointer dark:hover:bg-matcha dark:text-deep-black font-bold rounded-lg p-2 mr-1.5 text-xs " onClick={shoeMoreChips} >Show more
     </span>
 
         ;
@@ -30,13 +30,9 @@ export const ChipButton = () => {
 
 export const ChipList = ({ skills }: ChipListProps) => {
 
-    const modalOpen = (data: boolean) => {
-    }
-
-
     return (
         <>
-            {skills.slice(0, 2).map((skill) => (
+            {skills.slice(0, 3).map((skill) => (
                 <Chip key={skill} skill={skill} />
             ))}
             <ChipButton />

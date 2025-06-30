@@ -34,7 +34,7 @@ interface CardProjectProps {
 
 const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProps) => {
     return <article
-        className="card p-4 rounded bg-wasabi opacity-100  dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
+        className="card p-4 rounded bg-wasabi opacity-100  dark:bg-industrial border border-transparent"
     >
         <header className="mb-2">
             <h2 className="dark:text-wasabi text-rice font-bold text-xl">
@@ -44,11 +44,11 @@ const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProp
 
         <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
 
-        <section className="mt-4 p-2 text-sm text-shadow-deep-black dark:text-rice">
+        <section className="mt-4 p-2 text-sm text-industrial dark:text-rice">
             {children}
         </section>
 
-        <section className="mt-1 p-1">
+        <section className="mt-1 p-1 flex flex-row flex-wrap gap-2">
             <ChipList skills={skills.split(',')} />
         </section>
 

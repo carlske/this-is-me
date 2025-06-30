@@ -1,11 +1,10 @@
 ---
 import ArrowCard from "@/components/shared/ArrowCard.astro";
 import {CardExperience} from "@/shared/components/Cards/Cards";
-import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
 import { getCollection } from "astro:content";
 import type { Experience } from "@/shared/types/Experience";
-import TtitleSection from "@/components/shared/TtitleSection.astro";
 import ProfileSection from "@/layouts/ProfileSection.astro";
+import { DownloadPdf } from "@/shared/components/DownloadPdf/DownloadPdf";
 
 const experiences = await getCollection("experience");
 
@@ -45,10 +44,11 @@ const experiences = await getCollection("experience");
                         >
                         </CardExperience>
                         <div>
-                            {i !== (experiences.length-1) && <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  } 
+                            <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  
                         </div>  
                     );
                 })
             }
+            <DownloadPdf/>
         </div>
 </ProfileSection>

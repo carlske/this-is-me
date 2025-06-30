@@ -34,7 +34,7 @@ p {
 }
 
 p strong {
-    @apply font-bold text-matcha;
+    @apply font-bold text-matcha  dark:text-wasabi dark:font-semibold;
 }
 
 .item {
@@ -43,11 +43,13 @@ p strong {
     justify-content: center;
     cursor: pointer;
     border-radius: 12px;
-    border: 3px solid var(--color-core-pink);
+    @apply p-6 flex justify-center cursor-pointer rounded-[12px]
+         border-[3px] border-matcha
+         dark:border-core-pink; 
 }
 
 .item:hover {
-    border: 3px solid var(--color-wasabi);
+    @apply  border-core-pink dark:border-wasabi; 
 }
 
 
@@ -162,36 +164,6 @@ p strong {
         }
     }
 }
-
-@layer components {
-
-    .link {
-        padding: 0.5em;
-        border-radius: 1em;
-        cursor: pointer;
-
-    }
-
-    .link.primary {
-        border: 3px solid var(--color-wasabi);
-    }
-
-    .link.primary:hover {
-        border: 3px solid var(--color-matcha);
-        background-color: var(--color-matcha);
-        color: var(--color-deep-black)
-    }
-
-    .link.secondary {
-        background-color: var(--color-matcha);
-        color: var(--color-deep-black)
-    }
-
-    .link.secondary:hover {
-        opacity: 90%;
-    }
-}
-
 
 /** Header Shared component **/
 

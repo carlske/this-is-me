@@ -1,12 +1,15 @@
 ---
 import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
-const { heading, className } = Astro.props;
+const { heading, className, background } = Astro.props;
+
+let bg = "bg-rice dark:bg-deep-black";
+
+if (background) {
+    bg = background;
+}
 ---
 
-<section
-    class="w-screen bg-rice dark:bg-deep-black"
-    aria-label={`${heading}-seccion`}
->
+<section class=`w-screen ${bg}` aria-label={`${heading}-seccion`}>
     <article class="sticky top-0 bottom-0 z-10 p-8 bg-rice dark:bg-deep-black">
         <HeadingWithLine
             tag="h2"
