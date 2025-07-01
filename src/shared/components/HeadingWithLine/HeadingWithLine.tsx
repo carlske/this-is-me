@@ -10,6 +10,7 @@ interface HeadingWithLineProps {
     className?: string;
 }
 
+
 const colorMap = {
     matcha: 'dark:text-matcha text-core-pink',
     pink: 'text-core-pink',
@@ -29,9 +30,9 @@ const HeadingWithLine = ({ children, tag = 'p', color = 'matcha', lineColor = 'p
         text = String(value);
     }
 
-    text = text.replace(" ","_")
+    text = text.replace(" ", "_")
 
-    return (<div className={`letter-line ${position === 'center'? 'letter-line--center' : 'letter-line--baseline' }  ${animation === 'true' ? 'letter-line--animation' : ''}  ${className} ${fontColor}`}>
+    return (<div className={`letter-line ${position === 'center' ? 'letter-line--center' : 'letter-line--baseline'}  ${animation === 'true' ? 'letter-line--animation' : ''}  ${className} ${fontColor}`}>
         <Tag>{text}</Tag>
     </div>)
 }

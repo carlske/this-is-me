@@ -17,7 +17,7 @@ interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'classN
 
 const variantClasses: Record<LinkVariant, string> = {
     primary: 'hover:cursor-pointer border-[3px] border-wasabi hover:border-matcha hover:bg-matcha hover:text-deep-black p-3 rounded-xl',
-    secondary: 'hover:cursor-pointer dak:bg-matcha  bg-rice text-deep-black b hover:opacity-90 p-3 rounded-xl  border  border-[1px]  ',
+    secondary: 'hover:cursor-pointer dak:bg-matcha  bg-rice text-deep-black b hover:opacity-90 p-3 rounded-xl',
     ghost: '',
 };
 
