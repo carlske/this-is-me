@@ -1,29 +1,29 @@
 ---
 import '@/styles/global.css'
-import '@fontsource/michroma';
-import '@fontsource-variable/quicksand';
-import '@fontsource-variable/roboto-mono';
-import { ClientRouter } from 'astro:transitions';
+import '@fontsource/michroma'
+import '@fontsource-variable/quicksand'
+import '@fontsource-variable/roboto-mono'
+import { ClientRouter } from 'astro:transitions'
 ---
 
 <!doctype html>
 <html lang="en" data-theme="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Portafolio de Carlos V.">
-		<title>Portafolio</title>
-		<ClientRouter/>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Portafolio de Carlos V." />
+    <title>Portafolio</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	html{
-		font-family: 'Roboto Mono Variable', monospace;
-	}
+  html {
+    font-family: 'Roboto Mono Variable', monospace;
+  }
 </style>

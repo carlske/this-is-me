@@ -1,41 +1,53 @@
+import { useState } from 'react'
+import Modal from '@/shared/components/Modal/Modal'
 
 interface ChipProps {
-    skill: string
+  skill: string
 }
-
 
 interface ChipListProps {
-    skills: string[]
-
+  skills: string[]
 }
 
-
-
-export const Chip = ({ skill }: ChipProps) => {
-    return <span className="bg-core-pink text-rice font-bold rounded-lg p-2 mr-1.5 text-xs "> {skill} </span>;
+interface ChipButtonProps {
+  onClick: () => void
 }
 
+export const Chip = ({ skill }: ChipProps) => (
+  <span className="bg-core-pink text-rice mr-1.5 rounded-lg p-2 text-xs font-bold">{skill}</span>
+)
 
-export const ChipButton = () => {
-
-    const shoeMoreChips = () => {
-        console.log("wow")
-    }
-
-    return <span className="dark:bg-wasabi  bg-rice hover:opacity-80 hover:cursor-pointer dark:hover:bg-matcha dark:text-deep-black font-bold rounded-lg p-2 mr-1.5 text-xs " onClick={shoeMoreChips} >Show more
-    </span>
-
-        ;
-}
+const ChipButton = ({ onClick }: ChipButtonProps) => (
+  <span
+    className="dark:bg-wasabi bg-rice dark:hover:bg-matcha dark:text-deep-black mr-1.5 rounded-lg p-2 text-xs font-bold hover:cursor-pointer hover:opacity-80"
+    onClick={onClick}
+  >
+    Show more
+  </span>
+)
 
 export const ChipList = ({ skills }: ChipListProps) => {
+  const [open, setOpen] = useState(false)
 
-    return (
-        <>
-            {skills.slice(0, 3).map((skill) => (
-                <Chip key={skill} skill={skill} />
+  const handleShowMore = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
+  return (
+    <>
+      {skills.slice(0, 3).map((skill) => (
+        <Chip key={skill} skill={skill} />
+      ))}
+      {skills.length > 3 && <ChipButton onClick={handleShowMore} />}
+
+      {open && (
+        <Modal isOpen={open} onClose={handleClose} title="Skills">
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <Chip key={skill} skill={skill} />
             ))}
-            <ChipButton />
-        </>
-    );
-};
+          </div>
+        </Modal>
+      )}
+    </>
+  )
+}

@@ -1,39 +1,39 @@
 ---
-import GithubIcon from "@/icons/GithubIcon.astro";
-import LinkedInIcon from "@/icons/LinkedInIcon.astro";
-import MailIcon from "@/icons/MailIcon.astro";
-import { Link } from "@/shared/components/Links/Links";
+import GithubIcon from '@/icons/GithubIcon.astro'
+import LinkedInIcon from '@/icons/LinkedInIcon.astro'
+import MailIcon from '@/icons/MailIcon.astro'
+import { Link } from '@/shared/components/Links/Links'
 ---
 
-<section class="grid-simple sm:[--cols:3] text-industrial dark:text-wasabi">
-    <Link
-        variant="ghost"
-        href="https://www.linkedin.com/in/carlos-v-d-365394127/"
-        title="LinkedIn"
-        ariaLabel="Conoce mi linkedIn"
-    >
-        <div class="item">
-            <LinkedInIcon class="w-7 h-7" />
-        </div>
-    </Link>
-    <Link
-        variant="ghost"
-        href="https://github.com/carlske"
-        title="Github"
-        ariaLabel="Conoce mi github"
-    >
-        <div class="item">
-            <GithubIcon class="w-7 h-7" />
-        </div>
-    </Link>
-    <Link
-        variant="ghost"
-        href="mailto:fernancarldiaz@outlook.com"
-        title="Correo"
-        ariaLabel="Contacto por correo"
-    >
-        <div class="item">
-            <MailIcon class="w-7 h-7" />
-        </div>
-    </Link>
+<section class="grid-simple text-industrial dark:text-wasabi sm:[--cols:3]">
+  <Link
+    variant="ghost"
+    href="https://www.linkedin.com/in/carlos-v-d-365394127/"
+    title="LinkedIn"
+    ariaLabel="Conoce mi linkedIn"
+  >
+    <div class="item">
+      <LinkedInIcon class="h-7 w-7" />
+    </div>
+  </Link>
+  <Link
+    variant="ghost"
+    href="https://github.com/carlske"
+    title="Github"
+    ariaLabel="Conoce mi github"
+  >
+    <div class="item">
+      <GithubIcon class="h-7 w-7" />
+    </div>
+  </Link>
+  <Link
+    variant="ghost"
+    href="mailto:fernancarldiaz@outlook.com"
+    title="Correo"
+    ariaLabel="Contacto por correo"
+  >
+    <div class="item">
+      <MailIcon class="h-7 w-7" />
+    </div>
+  </Link>
 </section>

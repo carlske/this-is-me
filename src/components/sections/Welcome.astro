@@ -1,58 +1,54 @@
 ---
-import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
-import Footer from "@/components/Footer.astro";
-import AboutMe from "@/components/sections/AboutMe.astro";
-import Technologies from "@/components/sections/Technologies.astro";
-import Experience from "@/components/sections/Experience.astro";
-import FlatIcon from "@/icons/FlatIcon.astro";
-import NavBar from "@/components/NavBar.astro";
-import Media from "@/components/Media.astro";
+import HeadingWithLine from '@/shared/components/HeadingWithLine/HeadingWithLine'
+import Footer from '@/components/Footer.astro'
+import AboutMe from '@/components/sections/AboutMe.astro'
+import Technologies from '@/components/sections/Technologies.astro'
+import Experience from '@/components/sections/Experience.astro'
+import FlatIcon from '@/icons/FlatIcon.astro'
+import NavBar from '@/components/NavBar.astro'
+import Media from '@/components/Media.astro'
 ---
 
 <div id="container">
-	<NavBar />
-	<main class="w-full">
-		<article
-			class="w-screen [background:radial-gradient(100%_30%_at_0%_1%,#F472B6_22%,#F5F3F0_100%)] 
-         dark:[background:radial-gradient(100%_20%_at_30%_2%,#A3B9A2_1%,#0D0D0D_100%)] h-dvh flex flex-col justify-center items-center"
-		>
-			<div class="w-5/6 p-3">
-				<HeadingWithLine
-					tag="h1"
-					color="rice"
-					lineColor="pink"
-					className=""
-					animation="true"
-					position="baseline">CARLOS V</HeadingWithLine
-				>
-				<HeadingWithLine
-					tag="h2"
-					color="matcha"
-					lineColor="pink"
-					className=""
-					animation="true"
-					position="baseline">Frontend Developer</HeadingWithLine
-				>
-				<p class="dark:text-rice text-industrial text-base sm:text-xl mt-10">
-					Me apasiona crear software <strong>eficiente</strong>, <strong
-						>escalable</strong
-					>
-					y orientado a brindar la mejor <strong
-						>experiencia de usuario</strong
-					>.
-				</p>
-				<div class="flex items-center gap-5">
-					<FlatIcon class="w-10 h-10 dark:text-core-pink text-matcha" />
-					<span class="dark:text-matcha text-industrial text-sm"
-						>Disponible para nuevas oportunidades</span>
-				</div>
-				<Media />
-			</div>
-		</article>
+  <NavBar />
+  <main class="w-full">
+    <article
+      class="flex h-dvh w-screen flex-col items-center justify-center [background:radial-gradient(100%_30%_at_0%_1%,#F472B6_22%,#F5F3F0_100%)] dark:[background:radial-gradient(100%_20%_at_30%_2%,#A3B9A2_1%,#0D0D0D_100%)]"
+    >
+      <div class="w-5/6 p-3">
+        <HeadingWithLine
+          tag="h1"
+          color="rice"
+          lineColor="pink"
+          className=""
+          animation="true"
+          position="baseline">CARLOS V</HeadingWithLine
+        >
+        <HeadingWithLine
+          tag="h2"
+          color="matcha"
+          lineColor="pink"
+          className=""
+          animation="true"
+          position="baseline">Frontend Developer</HeadingWithLine
+        >
+        <p class="dark:text-rice text-industrial mt-10 text-base sm:text-xl">
+          Me apasiona crear software <strong>eficiente</strong>, <strong>escalable</strong>
+          y orientado a brindar la mejor <strong>experiencia de usuario</strong>.
+        </p>
+        <div class="flex items-center gap-5">
+          <FlatIcon class="dark:text-core-pink text-matcha h-10 w-10" />
+          <span class="dark:text-matcha text-industrial text-sm"
+            >Disponible para nuevas oportunidades</span
+          >
+        </div>
+        <Media />
+      </div>
+    </article>
 
-		<Experience />
-		<Technologies />
-		<AboutMe />
-		<Footer />
-	</main>
+    <Experience />
+    <Technologies />
+    <AboutMe />
+    <Footer />
+  </main>
 </div>

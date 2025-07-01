@@ -1,165 +1,158 @@
 ---
-import Css from "@/icons/technologies/front/Css.astro";
-import Java from "@/icons/technologies/back/Java.astro";
-import PostgresSql from "@/icons/technologies/back/PostgresSql.astro";
-import Python from "@/icons/technologies/back/Python.astro";
-import Php from "@/icons/technologies/back/Php.astro";
-import Node from "@/icons/technologies/back/Node.astro";
-import Docker from "@/icons/technologies/back/Docker.astro";
-import Pnpm from "@/icons/technologies/tools/Pnpm.astro";
-import Git from "@/icons/technologies/tools/Git.astro";
-import Webpack from "@/icons/technologies/tools/Webpack.astro";
+import Css from '@/icons/technologies/front/Css.astro'
+import Java from '@/icons/technologies/back/Java.astro'
+import PostgresSql from '@/icons/technologies/back/PostgresSql.astro'
+import Python from '@/icons/technologies/back/Python.astro'
+import Php from '@/icons/technologies/back/Php.astro'
+import Node from '@/icons/technologies/back/Node.astro'
+import Docker from '@/icons/technologies/back/Docker.astro'
+import Pnpm from '@/icons/technologies/tools/Pnpm.astro'
+import Git from '@/icons/technologies/tools/Git.astro'
+import Webpack from '@/icons/technologies/tools/Webpack.astro'
 
-import JavaScript from "@/icons/technologies/front/JavaScript.astro";
-import React from "@/icons/technologies/front/React.astro";
-import Svelte from "@/icons/technologies/front/Svelte.astro";
-import Tailwind from "@/icons/technologies/front/Tailwind.astro";
-import TypeScript from "@/icons/technologies/front/TypeScript.astro";
-import Sass from "@/icons/technologies/front/Sass.astro";
-import Redux from "@/icons/technologies/front/Redux.astro";
-import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
-import { useTranslations } from "@/i18n/uitls";
-import type { languages } from "@/i18n/ui";
-import ProfileSection from "@/layouts/ProfileSection.astro";
+import JavaScript from '@/icons/technologies/front/JavaScript.astro'
+import React from '@/icons/technologies/front/React.astro'
+import Svelte from '@/icons/technologies/front/Svelte.astro'
+import Tailwind from '@/icons/technologies/front/Tailwind.astro'
+import TypeScript from '@/icons/technologies/front/TypeScript.astro'
+import Sass from '@/icons/technologies/front/Sass.astro'
+import Redux from '@/icons/technologies/front/Redux.astro'
+import HeadingWithLine from '@/shared/components/HeadingWithLine/HeadingWithLine'
+import { useTranslations } from '@/i18n/uitls'
+import type { languages } from '@/i18n/ui'
+import ProfileSection from '@/layouts/ProfileSection.astro'
 
-const currentLang = Astro.currentLocale || "es";
+const currentLang = Astro.currentLocale || 'es'
 
-const translate = useTranslations(currentLang as keyof typeof languages);
+const translate = useTranslations(currentLang as keyof typeof languages)
 ---
 
 <ProfileSection
-    id={translate("technologies.header")}}
-    heading={translate("technologies.header")}
-    className="flex-col items-center"
+  id={translate('technologies.header')}
+  }
+  heading={translate('technologies.header')}
+  className="flex-col items-center"
 >
+  <div class="dark:text-rice text-industrial mb-10 w-5/6 px-6 text-base sm:px-12">
+    <p>
+      {translate('technologies.description')}
+    </p>
+    <p>
+      {translate('technologies.description2')}
+    </p>
+  </div>
+  <div class="grid w-5/6 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <div
-        class="dark:text-rice text-industrial text-base w-5/6 px-6 sm:px-12 mb-10"
+      class="bg-rice dark:bg-industrial border-r-matcha border-l-matcha hover:border-l-core-pink hover:border-r-core-pink rounded border border-l-[3px] border-r-[3px] border-transparent p-4 hover:border-l-[3px] hover:border-r-[3px]"
     >
-        <p>
-            {translate("technologies.description")}
-        </p>
-        <p>
-            {translate("technologies.description2")}
-        </p>
+      <HeadingWithLine
+        tag="h3"
+        color="matcha"
+        lineColor="pink"
+        className=""
+        animation="false"
+        position="baseline">Front End</HeadingWithLine
+      >
+      <div class="dark:text-rice text-industrial mt-4 grid grid-cols-2 justify-items-center gap-6">
+        <div class="flex flex-col items-center justify-center">
+          <JavaScript class="w-15 h-15" />
+          <span>JavaScript</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Css class="w-15 h-15" />
+          <span>CSS</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Tailwind class="w-15 h-15" />
+          <span>Tailwind</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <React class="w-15 h-15" />
+          <span>React</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Svelte class="w-15 h-15" />
+          <span>Svelte</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <TypeScript class="w-15 h-15" />
+          <span>TypeScript</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Sass class="w-15 h-15" />
+          <span>Sass</span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Redux class="w-15 h-15" />
+          <span>Redux</span>
+        </div>
+      </div>
     </div>
-    <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-            class="p-4 rounded bg-rice dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
-        >
-            <HeadingWithLine
-                tag="h3"
-                color="matcha"
-                lineColor="pink"
-                className=""
-                animation="false"
-                position="baseline">Front End</HeadingWithLine
-            >
-            <div
-                class="dark:text-rice text-industrial grid grid-cols-2 gap-6 justify-items-center mt-4"
-            >
-                <div class="flex justify-center flex-col items-center">
-                    <JavaScript class="w-15 h-15" />
-                    <span>JavaScript</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Css class="w-15 h-15" />
-                    <span>CSS</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Tailwind class="w-15 h-15" />
-                    <span>Tailwind</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <React class="w-15 h-15" />
-                    <span>React</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Svelte class="w-15 h-15" />
-                    <span>Svelte</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <TypeScript class="w-15 h-15" />
-                    <span>TypeScript</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Sass class="w-15 h-15" />
-                    <span>Sass</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Redux class="w-15 h-15" />
-                    <span>Redux</span>
-                </div>
-            </div>
+    <div
+      class="bg-rice dark:bg-industrial border-r-matcha border-l-matcha hover:border-l-core-pink hover:border-r-core-pink rounded border border-l-[3px] border-r-[3px] border-transparent p-4 hover:border-l-[3px] hover:border-r-[3px]"
+    >
+      <HeadingWithLine
+        tag="h3"
+        color="matcha"
+        lineColor="pink"
+        className=""
+        animation="false"
+        position="baseline">Back End</HeadingWithLine
+      >
+      <div class="dark:text-rice text-industrial mt-4 grid grid-cols-2 justify-items-center gap-6">
+        <div class="flex flex-col items-center justify-center">
+          <Java class="w-15 h-15" />
+          <span>Java</span>
         </div>
-        <div
-            class="p-4 rounded bg-rice dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
-        >
-            <HeadingWithLine
-                tag="h3"
-                color="matcha"
-                lineColor="pink"
-                className=""
-                animation="false"
-                position="baseline">Back End</HeadingWithLine
-            >
-            <div
-                class="dark:text-rice text-industrial grid grid-cols-2 gap-6 justify-items-center mt-4"
-            >
-                <div class="flex justify-center flex-col items-center">
-                    <Java class="w-15 h-15" />
-                    <span>Java</span>
-                </div>
 
-                <div class="flex justify-center flex-col items-center">
-                    <PostgresSql class="w-15 h-15" />
-                    <span>PostgreSQL</span>
-                </div>
+        <div class="flex flex-col items-center justify-center">
+          <PostgresSql class="w-15 h-15" />
+          <span>PostgreSQL</span>
+        </div>
 
-                <div class="flex justify-center flex-col items-center">
-                    <Python class="w-15 h-15" />
-                    <span>Python</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Php class="w-15 h-15" />
-                    <span>PHP</span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Node class="w-15 h-15" />
-                    <span>Node.js </span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Docker class="w-15 h-15" />
-                    <span>Docker </span>
-                </div>
-            </div>
+        <div class="flex flex-col items-center justify-center">
+          <Python class="w-15 h-15" />
+          <span>Python</span>
         </div>
-        <div
-            class="p-4 rounded bg-rice dark:bg-industrial border border-transparent border-r-[3px] border-r-matcha border-l-[3px] border-l-matcha hover:border-l-[3px] hover:border-r-[3px] hover:border-l-core-pink hover:border-r-core-pink"
-        >
-            <HeadingWithLine
-                tag="h3"
-                color="matcha"
-                lineColor="pink"
-                className=""
-                animation="false"
-                position="baseline">Herramientas</HeadingWithLine
-            >
-            <div
-                class="dark:text-rice text-industrial grid grid-cols-2 gap-6 justify-items-center mt-4"
-            >
-                <div class="flex justify-center flex-col items-center">
-                    <Pnpm class="w-15 h-15" />
-                    <span>pnpm </span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Git class="w-15 h-15" />
-                    <span>Git </span>
-                </div>
-                <div class="flex justify-center flex-col items-center">
-                    <Webpack class="w-15 h-15" />
-                    <span>Webpack </span>
-                </div>
-            </div>
+        <div class="flex flex-col items-center justify-center">
+          <Php class="w-15 h-15" />
+          <span>PHP</span>
         </div>
+        <div class="flex flex-col items-center justify-center">
+          <Node class="w-15 h-15" />
+          <span>Node.js </span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Docker class="w-15 h-15" />
+          <span>Docker </span>
+        </div>
+      </div>
     </div>
+    <div
+      class="bg-rice dark:bg-industrial border-r-matcha border-l-matcha hover:border-l-core-pink hover:border-r-core-pink rounded border border-l-[3px] border-r-[3px] border-transparent p-4 hover:border-l-[3px] hover:border-r-[3px]"
+    >
+      <HeadingWithLine
+        tag="h3"
+        color="matcha"
+        lineColor="pink"
+        className=""
+        animation="false"
+        position="baseline">Herramientas</HeadingWithLine
+      >
+      <div class="dark:text-rice text-industrial mt-4 grid grid-cols-2 justify-items-center gap-6">
+        <div class="flex flex-col items-center justify-center">
+          <Pnpm class="w-15 h-15" />
+          <span>pnpm </span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Git class="w-15 h-15" />
+          <span>Git </span>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <Webpack class="w-15 h-15" />
+          <span>Webpack </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </ProfileSection>
