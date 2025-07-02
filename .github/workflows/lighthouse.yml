@@ -8,7 +8,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: pnm install && pnpm add -g @lhci/cli@0.15.x
+      - run: pnpm install && pnpm add -g @lhci/cli@0.15.x
       - run: pnpm build
       - run: lhci autorun
- 
