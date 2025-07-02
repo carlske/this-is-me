@@ -19,7 +19,7 @@ const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
             tabIndex={0}
             className="bg-rice text-industrial border-industrial border-1 rounded-xl p-1 font-bold hover:cursor-pointer hover:opacity-80"
           >
-            Cerra
+            Cerrar
           </button>
         </div>
       </div>

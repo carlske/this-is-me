@@ -4,7 +4,7 @@ import { Link } from '../Links/Links'
 type TypeCardVariant = 'experience' | 'project'
 
 interface CardBaseProps {
-  skills: String
+  skills: string
   url: string | undefined
   linkText: string
   title: string

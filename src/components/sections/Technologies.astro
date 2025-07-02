@@ -18,27 +18,15 @@ import TypeScript from '@/icons/technologies/front/TypeScript.astro'
 import Sass from '@/icons/technologies/front/Sass.astro'
 import Redux from '@/icons/technologies/front/Redux.astro'
 import HeadingWithLine from '@/shared/components/HeadingWithLine/HeadingWithLine'
-import { useTranslations } from '@/i18n/uitls'
-import type { languages } from '@/i18n/ui'
 import ProfileSection from '@/layouts/ProfileSection.astro'
-
-const currentLang = Astro.currentLocale || 'es'
-
-const translate = useTranslations(currentLang as keyof typeof languages)
 ---
 
-<ProfileSection
-  id={translate('technologies.header')}
-  }
-  heading={translate('technologies.header')}
-  className="flex-col items-center"
->
+<ProfileSection id="Technologia" heading="Technologias" className="flex-col items-center">
   <div class="dark:text-rice text-industrial mb-10 w-5/6 px-6 text-base sm:px-12">
+    <p>Estas son algunas de las tecnologías con las que he trabajado.</p>
     <p>
-      {translate('technologies.description')}
-    </p>
-    <p>
-      {translate('technologies.description2')}
+      Crear soluciones eficientes tanto para el frontend como para el backend, combinando diseño,
+      rendimiento y escalabilidad.
     </p>
   </div>
   <div class="grid w-5/6 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
