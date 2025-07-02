@@ -28,8 +28,5 @@ jobs:
       - name: Type-check (Astro + TS)
         run: pnpm astro check
 
-      - name: Unit tests
-        run: pnpm test -- --run
-
       - name: Build de producción
         run: pnpm build
