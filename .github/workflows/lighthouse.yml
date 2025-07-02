@@ -1,13 +1,32 @@
 name: CI
 on: [push]
 jobs:
+  cache-and-install:
+    runs-on: ubuntu-latest
+
   lighthouseci:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: pnpm install && pnpm add -g @lhci/cli@0.15.x
-      - run: pnpm build
-      - run: lhci autorun
+          node-version: 20
+          
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install && pnpm add -g @lhci/cli@0.15.x
+        run: pnpm build
+        run: lhci autorun
+
