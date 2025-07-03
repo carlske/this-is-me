@@ -1,111 +1,102 @@
-import { ChipList } from "../Chips/Chips"
-import { Link } from "../Links/Links"
+import { ChipList } from '../Chips/Chips'
+import { Link } from '../Links/Links'
 
 type TypeCardVariant = 'experience' | 'project'
 
 interface CardBaseProps {
-    skills: String
-    url: string | undefined
-    linkText: string
-    title: string
-    children: React.ReactNode
-    typeCard: TypeCardVariant
+  skills: string
+  url: string | undefined
+  linkText: string
+  title: string
+  children: React.ReactNode
+  typeCard: TypeCardVariant
 }
 
-
 interface CardExperienceProps {
-    company: string
-    startDate: string
-    finishDate: string
-    skills: string
-    pageId: string | undefined
-    position: string
+  company: string
+  startDate: string
+  finishDate: string
+  skills: string
+  pageId: string | undefined
+  position: string
 }
 
 interface CardProjectProps {
-    title: string
-    startDate: string
-    finishDate: string
-    skills: string
-    link: string | undefined
+  title: string
+  skills: string
+  link: string | undefined
 }
-
-
 
 const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProps) => {
-    return <article
-        className="card p-4 rounded bg-wasabi opacity-100  dark:bg-industrial border border-transparent"
-    >
-        <header className="mb-2">
-            <h2 className="dark:text-wasabi text-rice font-bold text-xl">
-                {title}
-            </h2>
-        </header>
+  return (
+    <article className="card bg-wasabi dark:bg-industrial rounded border border-transparent p-4 opacity-100">
+      <header className="mb-2">
+        <h2 className="dark:text-wasabi text-rice text-xl font-bold">{title}</h2>
+      </header>
 
-        <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
+      <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
 
-        <section className="mt-4 p-2 text-sm text-industrial dark:text-rice">
-            {children}
-        </section>
+      <section className="text-industrial dark:text-rice mt-4 p-2 text-sm">{children}</section>
 
-        <section className="mt-1 p-1 flex flex-row flex-wrap gap-2">
-            <ChipList skills={skills.split(',')} />
-        </section>
+      <section className="mt-1 flex flex-row flex-wrap gap-2 p-1">
+        <ChipList skills={skills.split(',')} />
+      </section>
 
-        <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
+      <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
 
-
-        <section className="flex flex-row justify-around mt-5">
-            <Link variant="secondary" target={typeCard === 'experience' ? '_self' : '_blank'}
-                ariaLabel={`Conoce mas acerca mi experiencia como de ${title} `} href={url} >{linkText}</Link>
-        </section>
+      <section className="mt-5 flex flex-row justify-around">
+        <Link
+          variant="secondary"
+          target={typeCard === 'experience' ? '_self' : '_blank'}
+          ariaLabel={`Conoce mas acerca mi experiencia como de ${title} `}
+          href={url}
+        >
+          {linkText}
+        </Link>
+      </section>
     </article>
-
+  )
 }
 
+export const CardExperience = ({
+  startDate,
+  finishDate,
+  company,
+  skills,
+  pageId,
+  position,
+}: CardExperienceProps) => {
+  const dateExperience = startDate.concat(',', finishDate)
 
+  const urlPage = `./experience/${pageId}`
 
-export const CardExperience = ({ startDate, finishDate, company, skills, pageId, position }: CardExperienceProps) => {
+  return (
+    <Card skills={skills} url={urlPage} title={position} linkText="Ver mas" typeCard="experience">
+      <div className="flex flex-col text-xs">
+        <span>{company}</span>
+        <span>{dateExperience}</span>
+      </div>
+      <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
 
-    const dateExperience = startDate.concat(',', finishDate)
-
-    const urlPage = `./experience/${pageId}`
-
-    return <Card
-        skills={skills}
-        url={urlPage}
-        title={position}
-        linkText="Ver mas"
-        typeCard="experience"
-    >
-        <div className="text-xs flex flex-col">
-            <span>{company}</span>
-            <span>{dateExperience}</span>
-        </div>
-        <div className="h-[3px] w-full mt-4 opacity-10 dark:bg-wasabi bg-industrial "></div>
-
-        <div className="mt-4 p-1">
-            <p>I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work doing Frontend, Php and Python solutions</p>
-        </div>
+      <div className="mt-4 p-1">
+        <p>
+          I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work
+          doing Frontend, Php and Python solutions
+        </p>
+      </div>
     </Card>
-
+  )
 }
 
-
-export const CardProject = ({ startDate, finishDate, title, skills, link }: CardProjectProps) => {
-
-    const dateExperience: string = startDate.concat(',', finishDate)
-
-    return <Card
-        skills={skills}
-        url={link}
-        title={title}
-        linkText="Ver mas"
-        typeCard="project"
-    >
-        <div className="mt-4 p-1">
-            <p>I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work doing Frontend, Php and Python solutions</p>
-        </div>
+export const CardProject = ({ title, skills, link }: CardProjectProps) => {
+  return (
+    <Card skills={skills} url={link} title={title} linkText="Ver mas" typeCard="project">
+      <div className="mt-4 p-1">
+        <p>
+          I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work
+          doing Frontend, Php and Python solutions
+        </p>
+      </div>
     </Card>
-
+  )
 }

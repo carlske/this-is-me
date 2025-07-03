@@ -13,7 +13,7 @@ const experiences = await getCollection("experience");
 <ProfileSection id="experience" heading="Experiencia">
         <div class="w-5/6 grid grid-cols-1 gap-1">
             {
-                experiences.map((experience : Experience , i : number) => {
+                experiences.map((experience : Experience) => {
                     const {  data } = experience
 
                     const {

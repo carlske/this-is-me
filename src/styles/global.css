@@ -1,177 +1,159 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-
 @theme {
-    --color-*: initial;
-    --color-deep-black: #0D0D0D;
-    --color-industrial: #1F1F1F;
-    --color-matcha: #98C379;
-    --color-wasabi: #A3B9A2;
-    --color-rice: #F5F3F0;
-    --color-core-pink: #F472B6;
+  --color-*: initial;
+  --color-deep-black: #0d0d0d;
+  --color-industrial: #1f1f1f;
+  --color-matcha: #98c379;
+  --color-wasabi: #a3b9a2;
+  --color-rice: #f5f3f0;
+  --color-core-pink: #f472b6;
 
-    --spacing-line: 5px;
-    --spacing-space-line: 1rem;
-
+  --spacing-line: 5px;
+  --spacing-space-line: 1rem;
 }
 
-
 :root {
-    background-color: var(--color-rice);
+  background-color: var(--color-rice);
 }
 
 @utility grid-simple {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--gap, 1rem);
-    margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap, 1rem);
+  margin-top: 5rem;
 }
 
 p {
-    margin-bottom: 1lh;
+  margin-bottom: 1lh;
 }
 
 p strong {
-    @apply font-bold text-matcha  dark:text-wasabi dark:font-semibold;
+  @apply text-matcha dark:text-wasabi font-bold dark:font-semibold;
 }
 
 .item {
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 12px;
-    @apply p-6 flex justify-center cursor-pointer rounded-[12px]
-         border-[3px] border-matcha
-         dark:border-core-pink; 
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 12px;
+  @apply border-matcha dark:border-core-pink flex cursor-pointer justify-center rounded-[12px] border-[3px] p-6;
 }
 
 .item:hover {
-    @apply  border-core-pink dark:border-wasabi; 
+  @apply border-core-pink dark:border-wasabi;
 }
 
-
-
-/*** HeadingWithLine shared component ***/
+/*** AccentHeading shared component ***/
 @layer components {
+  .letter-line {
+    display: flex;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    gap: 1rem;
+  }
 
+  .letter-line--baseline {
+    align-items: baseline;
+  }
 
-    .letter-line {
-        display: flex;
-        font-weight: bold;
-        overflow: hidden;
-        position: relative;
-        gap: 1rem;
+  .letter-line--center {
+    align-items: center;
+  }
+
+  .letter-line--animation {
+    animation: slide-in 2s 0.1s forwards;
+  }
+
+  .letter-line::after {
+    content: '';
+    flex-grow: 1;
+    height: 5px;
+    background-color: var(--color-core-pink);
+  }
+
+  .letter-line--animation::after {
+    animation: color_bar 3s infinite;
+  }
+
+  .letter-line h1 {
+    font-weight: 700;
+    font-size: calc(12px + 7vw);
+  }
+
+  .letter-line h2 {
+    font-weight: 600;
+    font-size: calc(12px + 4vw);
+  }
+
+  .letter-line h3 {
+    font-weight: 500;
+    font-size: clamp(2rem, 2vw, 1rem);
+  }
+
+  .letter-line p {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+  }
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
     }
 
-    .letter-line--baseline {
-        align-items: baseline;
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes color_bar {
+    0% {
+      background-color: var(--color-core-pink);
     }
 
-    .letter-line--center {
-        align-items: center;
+    50% {
+      background-color: var(--color-wasabi);
     }
 
-    .letter-line--animation {
-        animation: slide-in 2s .1s forwards;
+    100% {
+      background-color: var(--color-core-pink);
     }
-
-    .letter-line::after {
-        content: "";
-        flex-grow: 1;
-        height: 5px;
-        background-color: var(--color-core-pink);
-    }
-
-    .letter-line--animation::after {
-        animation: color_bar 3s infinite;
-
-    }
-
-    .letter-line h1 {
-        font-family: 'Quicksand Variable', sans-serif;
-        font-weight: 700;
-        font-size: calc(12px + 7vw);
-    }
-
-    .letter-line h2 {
-        font-family: 'Quicksand Variable', sans-serif;
-        font-weight: 700;
-        font-size: calc(12px + 3vw);
-    }
-
-    .letter-line h3 {
-        font-family: 'Quicksand Variable', sans-serif;
-        font-weight: 500;
-        font-size: clamp(2rem, 2vw, 1rem);
-    }
-
-    .letter-line p {
-        font-family: 'Roboto Mono Variable', monospace;
-        font-size: clamp(1rem, 2.5vw, 1.125rem);
-    }
-
-    @keyframes slide-in {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes color_bar {
-        0% {
-
-            background-color: var(--color-core-pink);
-        }
-
-        50% {
-            background-color: var(--color-wasabi);
-        }
-
-        100% {
-            background-color: var(--color-core-pink);
-        }
-
-    }
+  }
 }
-
 
 /** Card Shared component **/
 @layer components {
+  .card {
+    view-timeline-name: --reveal;
+    animation-name: show;
+    animation-fill-mode: both;
+    animation-timeline: --reveal;
+    animation-range: entry 25% cover 50%;
+  }
 
-    .card {
-        view-timeline-name: --reveal;
-        animation-name: show;
-        animation-fill-mode: both;
-        animation-timeline: --reveal;
-        animation-range: entry 25% cover 50%;
+  @keyframes show {
+    from {
+      opacity: 0;
+      scale: 10%;
     }
 
-    @keyframes show {
-        from {
-            opacity: 0;
-            scale: 10%;
-        }
-
-        to {
-            opacity: 1;
-            scale: 100%;
-        }
+    to {
+      opacity: 1;
+      scale: 100%;
     }
+  }
 }
 
 /** Header Shared component **/
 
 .title-header {
-    padding: 2em;
-    position: sticky;
-    background-color: var(--color-rice);
-    top: 0;
-    bottom: 0;
-    z-index: 1;
+  padding: 2em;
+  position: sticky;
+  background-color: var(--color-rice);
+  top: 0;
+  bottom: 0;
+  z-index: 1;
 }

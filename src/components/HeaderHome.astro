@@ -1,67 +1,49 @@
 ---
-import ArrowIcon from "@/icons/ArrowIcon.astro";
-import GithubIcon from "@/icons/GithubIcon.astro";
-import LinkedInIcon from "@/icons/LinkedInIcon.astro";
-import MailIcon from "@/icons/MailIcon.astro";
-import HeadingWithLine from "@/shared/components/HeadingWithLine/HeadingWithLine";
-import { Link } from "@/shared/components/Links/Links";
+import ArrowIcon from '@/icons/ArrowIcon.astro'
+import GithubIcon from '@/icons/GithubIcon.astro'
+import LinkedInIcon from '@/icons/LinkedInIcon.astro'
+import MailIcon from '@/icons/MailIcon.astro'
+import {
+  AccentHeadingSubtitle,
+  AccentHeadingTitle,
+} from '@/shared/components/AccentHeading/AccentHeading'
+import { Link } from '@/shared/components/Links/Links'
 ---
 
 <section
-    class="w-screen [background:radial-gradient(100%_21%_at_30%_2%,#A3B9A2_20%,#0D0D0D_100%)] h-dvh flex flex-col justify-center items-center"
+  class="flex h-dvh w-screen flex-col items-center justify-center [background:radial-gradient(100%_21%_at_30%_2%,#A3B9A2_20%,#0D0D0D_100%)]"
 >
-    <div class="w-5/6 p-3">
-        <HeadingWithLine
-            tag="h1"
-            color="rice"
-            lineColor="pink"
-            className=""
-            animation="true"
-            position="baseline">CARLOS V</HeadingWithLine
-        >
-        <HeadingWithLine
-            tag="h2"
-            color="matcha"
-            lineColor="pink"
-            className=""
-            animation="true"
-            position="baseline">Frontend Developer</HeadingWithLine
-        >
-        <p class="text-rice text-base sm:text-xl mt-10">
-            Me apasiona crear software <strong>eficiente</strong>, <strong
-                >escalable</strong
-            > y orientado a brindar la mejor <strong
-                >experiencia de usuario</strong
-            >.
-        </p>|
-        <div class="grid-simple sm:[--cols:3]">
-            <Link
-                variant="ghost"
-                href="https://www.linkedin.com/in/carlos-v-d-365394127/"
-                title="LinkedIn"
-            >
-                <LinkedInIcon class="w-7 h-7" />
-            </Link>
-            <Link
-                variant="ghost"
-                href="https://github.com/carlske"
-                title="Github"
-            >
-                <GithubIcon class="w-7 h-7" />
-            </Link>
-            <Link
-                variant="ghost"
-                href="mailto:fernancarldiaz@outlook.com"
-                title="Correo"
-            >
-                <MailIcon class="w-7 h-7" />
-            </Link>
-        </div>
-        <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 transform flex items-center flex-col mb-2.5"
-        >
-            <span class="text-rice text-sm">Quién soy</span>
-            <ArrowIcon class="w-7 h-7 text-core-pink transition-colors" />
-        </div>
+  <div class="w-5/6 p-3">
+    <AccentHeadingTitle color="rice" animation="true" position="baseline"
+      >CARLOS V</AccentHeadingTitle
+    >
+    <AccentHeadingSubtitle color="matcha" animation="true" position="baseline"
+      >Frontend Developer</AccentHeadingSubtitle
+    >
+    <p class="text-rice mt-10 text-base sm:text-xl">
+      Me apasiona crear software <strong>eficiente</strong>, <strong>escalable</strong> y orientado a
+      brindar la mejor <strong>experiencia de usuario</strong>.
+    </p>|
+    <div class="grid-simple sm:[--cols:3]">
+      <Link
+        variant="ghost"
+        href="https://www.linkedin.com/in/carlos-v-d-365394127/"
+        title="LinkedIn"
+      >
+        <LinkedInIcon class="h-7 w-7" />
+      </Link>
+      <Link variant="ghost" href="https://github.com/carlske" title="Github">
+        <GithubIcon class="h-7 w-7" />
+      </Link>
+      <Link variant="ghost" href="mailto:fernancarldiaz@outlook.com" title="Correo">
+        <MailIcon class="h-7 w-7" />
+      </Link>
     </div>
+    <div
+      class="absolute bottom-0 left-1/2 mb-2.5 flex -translate-x-1/2 transform flex-col items-center"
+    >
+      <span class="text-rice text-sm">Quién soy</span>
+      <ArrowIcon class="text-core-pink h-7 w-7 transition-colors" />
+    </div>
+  </div>
 </section>
