@@ -1,5 +1,5 @@
 ---
-import HeadingWithLine from '@/shared/components/HeadingWithLine/HeadingWithLine'
+import { AccentHeadingSubtitle } from '@/shared/components/AccentHeading/AccentHeading'
 
 const { title, company } = Astro.props
 ---
@@ -9,13 +9,8 @@ const { title, company } = Astro.props
     <h1 class="text-deep-black dark:text-rice mt-12 text-5xl font-bold md:text-6xl">
       {title}
     </h1>
-    <HeadingWithLine
-      tag="h2"
-      color="matcha"
-      lineColor="wasabi"
-      className=""
-      animation="true"
-      position="center">{company}</HeadingWithLine
+    <AccentHeadingSubtitle color="matcha" animation="true" position="center"
+      >{company}</AccentHeadingSubtitle
     >
   </div>
 </section>

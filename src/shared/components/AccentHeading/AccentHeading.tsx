@@ -1,31 +1,29 @@
 import { isValidElement } from 'react'
 
-interface HeadingWithLineProps {
+interface AccentHeadingTitleProps {
   children: React.ReactNode
   tag?: 'h1' | 'h2' | 'h3' | 'p'
-  color: 'matcha' | 'rice'
-  lineColor: 'pink' | 'wasabi'
+  color: 'matcha' | 'rice' | 'wasabi'
   animation: 'true' | 'false'
   position: 'baseline' | 'center'
   className?: string
 }
 
 const colorMap = {
-  matcha: 'dark:text-matcha text-core-pink',
+  matcha: 'dark:text-matcha text-rice',
   pink: 'text-core-pink',
   wasabi: 'dark:text-wasabi text-core-pink',
   rice: 'dark:text-rice text-industrial',
 }
 
-const HeadingWithLine = ({
+const AccentHeadingTitleBase = ({
   children,
   tag = 'p',
   color = 'matcha',
-  lineColor = 'pink',
   className,
   animation = 'false',
   position = 'baseline',
-}: HeadingWithLineProps) => {
+}: AccentHeadingTitleProps) => {
   const Tag = tag
 
   const fontColor = colorMap[color] || 'text-matcha'
@@ -47,4 +45,18 @@ const HeadingWithLine = ({
   )
 }
 
-export default HeadingWithLine
+export const AccentHeadingTitle = (props: Omit<AccentHeadingTitleProps, 'tag'>) => (
+  <AccentHeadingTitleBase {...props} tag="h1" />
+)
+
+export const AccentHeadingSubtitle = (props: Omit<AccentHeadingTitleProps, 'tag'>) => (
+  <AccentHeadingTitleBase {...props} tag="h2" />
+)
+
+export const AccentHeadingSubheading = (props: Omit<AccentHeadingTitleProps, 'tag'>) => (
+  <AccentHeadingTitleBase {...props} tag="h3" />
+)
+
+export const AccentHeadingText = (props: Omit<AccentHeadingTitleProps, 'tag'>) => (
+  <AccentHeadingTitleBase {...props} tag="p" />
+)

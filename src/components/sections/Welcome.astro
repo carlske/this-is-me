@@ -1,5 +1,4 @@
 ---
-import HeadingWithLine from '@/shared/components/HeadingWithLine/HeadingWithLine'
 import Footer from '@/components/Footer.astro'
 import AboutMe from '@/components/sections/AboutMe.astro'
 import Technologies from '@/components/sections/Technologies.astro'
@@ -7,6 +6,10 @@ import Experience from '@/components/sections/Experience.astro'
 import FlatIcon from '@/icons/FlatIcon.astro'
 import NavBar from '@/components/NavBar.astro'
 import Media from '@/components/Media.astro'
+import {
+  AccentHeadingSubtitle,
+  AccentHeadingTitle,
+} from '@/shared/components/AccentHeading/AccentHeading'
 ---
 
 <div id="container">
@@ -16,21 +19,11 @@ import Media from '@/components/Media.astro'
       class="flex h-dvh w-screen flex-col items-center justify-center [background:radial-gradient(100%_30%_at_0%_1%,#F472B6_22%,#F5F3F0_100%)] dark:[background:radial-gradient(100%_20%_at_30%_2%,#A3B9A2_1%,#0D0D0D_100%)]"
     >
       <div class="w-5/6 p-3">
-        <HeadingWithLine
-          tag="h1"
-          color="rice"
-          lineColor="pink"
-          className=""
-          animation="true"
-          position="baseline">CARLOS V</HeadingWithLine
+        <AccentHeadingTitle color="rice" animation="true" position="baseline"
+          >CARLOS V</AccentHeadingTitle
         >
-        <HeadingWithLine
-          tag="h2"
-          color="matcha"
-          lineColor="pink"
-          className=""
-          animation="true"
-          position="baseline">Frontend Developer</HeadingWithLine
+        <AccentHeadingSubtitle color="wasabi" animation="true" position="baseline"
+          >Frontend Developer</AccentHeadingSubtitle
         >
         <p class="dark:text-rice text-industrial mt-10 text-base sm:text-xl">
           Me apasiona crear software <strong>eficiente</strong>, <strong>escalable</strong>

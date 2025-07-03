@@ -47,7 +47,7 @@ p strong {
   @apply border-core-pink dark:border-wasabi;
 }
 
-/*** HeadingWithLine shared component ***/
+/*** AccentHeading shared component ***/
 @layer components {
   .letter-line {
     display: flex;
@@ -81,25 +81,21 @@ p strong {
   }
 
   .letter-line h1 {
-    font-family: 'Quicksand Variable', sans-serif;
     font-weight: 700;
     font-size: calc(12px + 7vw);
   }
 
   .letter-line h2 {
-    font-family: 'Quicksand Variable', sans-serif;
-    font-weight: 700;
-    font-size: calc(12px + 3vw);
+    font-weight: 600;
+    font-size: calc(12px + 4vw);
   }
 
   .letter-line h3 {
-    font-family: 'Quicksand Variable', sans-serif;
     font-weight: 500;
     font-size: clamp(2rem, 2vw, 1rem);
   }
 
   .letter-line p {
-    font-family: 'Roboto Mono Variable', monospace;
     font-size: clamp(1rem, 2.5vw, 1.125rem);
   }
 

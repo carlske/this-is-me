@@ -17,8 +17,8 @@ import Tailwind from '@/icons/technologies/front/Tailwind.astro'
 import TypeScript from '@/icons/technologies/front/TypeScript.astro'
 import Sass from '@/icons/technologies/front/Sass.astro'
 import Redux from '@/icons/technologies/front/Redux.astro'
-import HeadingWithLine from '@/shared/components/HeadingWithLine/HeadingWithLine'
 import ProfileSection from '@/layouts/ProfileSection.astro'
+import { AccentHeadingSubheading } from '@/shared/components/AccentHeading/AccentHeading'
 ---
 
 <ProfileSection id="Technologia" heading="Technologias" className="flex-col items-center">
@@ -33,13 +33,8 @@ import ProfileSection from '@/layouts/ProfileSection.astro'
     <div
       class="bg-rice dark:bg-industrial border-r-matcha border-l-matcha hover:border-l-core-pink hover:border-r-core-pink rounded border border-l-[3px] border-r-[3px] border-transparent p-4 hover:border-l-[3px] hover:border-r-[3px]"
     >
-      <HeadingWithLine
-        tag="h3"
-        color="matcha"
-        lineColor="pink"
-        className=""
-        animation="false"
-        position="baseline">Front End</HeadingWithLine
+      <AccentHeadingSubheading color="matcha" animation="false" position="baseline"
+        >Front End</AccentHeadingSubheading
       >
       <div class="dark:text-rice text-industrial mt-4 grid grid-cols-2 justify-items-center gap-6">
         <div class="flex flex-col items-center justify-center">
@@ -79,13 +74,8 @@ import ProfileSection from '@/layouts/ProfileSection.astro'
     <div
       class="bg-rice dark:bg-industrial border-r-matcha border-l-matcha hover:border-l-core-pink hover:border-r-core-pink rounded border border-l-[3px] border-r-[3px] border-transparent p-4 hover:border-l-[3px] hover:border-r-[3px]"
     >
-      <HeadingWithLine
-        tag="h3"
-        color="matcha"
-        lineColor="pink"
-        className=""
-        animation="false"
-        position="baseline">Back End</HeadingWithLine
+      <AccentHeadingSubheading color="matcha" className="" animation="false" position="baseline"
+        >Back End</AccentHeadingSubheading
       >
       <div class="dark:text-rice text-industrial mt-4 grid grid-cols-2 justify-items-center gap-6">
         <div class="flex flex-col items-center justify-center">
@@ -119,13 +109,8 @@ import ProfileSection from '@/layouts/ProfileSection.astro'
     <div
       class="bg-rice dark:bg-industrial border-r-matcha border-l-matcha hover:border-l-core-pink hover:border-r-core-pink rounded border border-l-[3px] border-r-[3px] border-transparent p-4 hover:border-l-[3px] hover:border-r-[3px]"
     >
-      <HeadingWithLine
-        tag="h3"
-        color="matcha"
-        lineColor="pink"
-        className=""
-        animation="false"
-        position="baseline">Herramientas</HeadingWithLine
+      <AccentHeadingSubheading color="matcha" className="" animation="false" position="baseline"
+        >Herramientas</AccentHeadingSubheading
       >
       <div class="dark:text-rice text-industrial mt-4 grid grid-cols-2 justify-items-center gap-6">
         <div class="flex flex-col items-center justify-center">
