@@ -6,7 +6,7 @@ interface ChipProps {
 }
 
 interface ChipListProps {
-  skills: string[]
+  skills: Record<string, string>
 }
 
 interface ChipButtonProps {
@@ -29,20 +29,34 @@ const ChipButton = ({ onClick }: ChipButtonProps) => (
 export const ChipList = ({ skills }: ChipListProps) => {
   const [open, setOpen] = useState(false)
 
+  const { backend, frontend, others } = skills
+
   const handleShowMore = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
   return (
     <>
-      {skills.slice(0, 3).map((skill) => (
-        <Chip key={skill} skill={skill} />
-      ))}
-      {skills.length > 3 && <ChipButton onClick={handleShowMore} />}
+      <Chip skill="Backend" />
+      <Chip skill="Frontend" />
+      <ChipButton onClick={handleShowMore} />
 
       {open && (
         <Modal isOpen={open} onClose={handleClose} title="Skills">
+          <h3 className="mb-4 text-xl font-bold">Backend</h3>
           <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
+            {backend.split(',').map((skill) => (
+              <Chip key={skill} skill={skill} />
+            ))}
+          </div>
+          <h3 className="mb-4 text-xl font-bold">Frontend</h3>
+          <div className="flex flex-wrap gap-2">
+            {frontend.split(',').map((skill) => (
+              <Chip key={skill} skill={skill} />
+            ))}
+          </div>
+          <h3 className="mb-4 text-xl font-bold">Otros</h3>
+          <div className="flex flex-wrap gap-2">
+            {others.split(',').map((skill) => (
               <Chip key={skill} skill={skill} />
             ))}
           </div>

@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
 import type { Experience, Project } from '@/shared/types/Experience'
 import Header from '@/components/experience/Header.astro'
@@ -9,6 +9,7 @@ import { CardProject } from '@/shared/components/Cards/Cards'
 import ArrowCard from '@/components/shared/ArrowCard.astro'
 import NavBar from '@/components/NavBar.astro'
 import Media from '@/components/Media.astro'
+import normalizeTech from '@/shared/utils/utils'
 
 export async function getStaticPaths() {
   const experiences: Experience[] = await getCollection('experience')
@@ -53,10 +54,12 @@ if (end_date != null) {
               <>
                 <CardProject
                   title={project.title}
-                  skills={project.tech.join(',')}
+                  skills={normalizeTech(project.tech)}
                   link={project.link}
                   client:load
-                />
+                >
+                  <p>{project.description}</p>
+                </CardProject>
                 {i !== projects.length - 1 && <ArrowCard class="w-15 h-15 mb-8 mt-8" />}
               </>
             ))

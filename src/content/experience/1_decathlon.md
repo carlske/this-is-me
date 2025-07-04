@@ -4,41 +4,40 @@ position: Frontend Developer
 company: Decathlon Mexico
 employment_type: Jornada completa
 start_date: '2021-01'
-end_date: null
+end_date: '2025-05'
 duration: '4 años 6 meses'
 location: México
 website: 'https://www.decathlon.com.mx'
-skills:
-  - Frontend
-  - PHP
-  - JS
-  - CSS
-  - Prestashop
-  - Backend
+tech:
+  - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+  - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+  - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+
 projects:
   - title: Decathlon E-commerce Platform
     description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
     tech:
-      - Svelte
-      - TailwindCSS
-      - Php
-      - Prestashop
-      - Backend
+      - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
     link: 'https://www.decathlon.com.mx'
     private: true
+
   - title: ShipperBox
     description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
     tech:
-      - React
-      - Web Components
-      - TailwindCSS
+      - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+
     link: 'https://www.decathlon.com.mx'
+
   - title: Identificador Regional - LATAM
     description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
     tech:
-      - React
-      - Web Components
-      - TailwindCSS
+      - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
     link: 'https://www.decathlon.com.mx'
 ---
 

@@ -4,7 +4,7 @@ import { Link } from '../Links/Links'
 type TypeCardVariant = 'experience' | 'project'
 
 interface CardBaseProps {
-  skills: string
+  skills: Record<string, string>
   url: string | undefined
   linkText: string
   title: string
@@ -13,17 +13,19 @@ interface CardBaseProps {
 }
 
 interface CardExperienceProps {
+  children: React.ReactNode
   company: string
   startDate: string
   finishDate: string
-  skills: string
+  skills: Record<string, string>
   pageId: string | undefined
   position: string
 }
 
 interface CardProjectProps {
+  children: React.ReactNode
   title: string
-  skills: string
+  skills: Record<string, string>
   link: string | undefined
 }
 
@@ -39,7 +41,7 @@ const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProp
       <section className="text-industrial dark:text-rice mt-4 p-2 text-sm">{children}</section>
 
       <section className="mt-1 flex flex-row flex-wrap gap-2 p-1">
-        <ChipList skills={skills.split(',')} />
+        <ChipList skills={skills} />
       </section>
 
       <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
@@ -59,6 +61,7 @@ const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProp
 }
 
 export const CardExperience = ({
+  children,
   startDate,
   finishDate,
   company,
@@ -78,25 +81,15 @@ export const CardExperience = ({
       </div>
       <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
 
-      <div className="mt-4 p-1">
-        <p>
-          I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work
-          doing Frontend, Php and Python solutions
-        </p>
-      </div>
+      <div className="mt-4 p-1">{children}</div>
     </Card>
   )
 }
 
-export const CardProject = ({ title, skills, link }: CardProjectProps) => {
+export const CardProject = ({ children, title, skills, link }: CardProjectProps) => {
   return (
     <Card skills={skills} url={link} title={title} linkText="Ver mas" typeCard="project">
-      <div className="mt-4 p-1">
-        <p>
-          I work with developers from many countries Canada, France, Ukraine, Egypt, etc. I work
-          doing Frontend, Php and Python solutions
-        </p>
-      </div>
+      <div className="mt-4 p-1">{children}</div>
     </Card>
   )
 }

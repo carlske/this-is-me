@@ -1,8 +1,14 @@
+type TechStrings = {
+  frontend: string[]
+  backend: string[]
+  otros: string[]
+}
+
 export interface Project {
   title: string
   description: string
-  tech: string[]
-  link?: string
+  tech: Partial<Record<keyof TechStrings, string[]>>[]
+  link: string
   private?: boolean
 }
 
@@ -16,7 +22,7 @@ export interface ExperienceData {
   duration: string
   location: string
   website: string
-  skills: string[]
+  tech: Record<string, string>
   projects: Project[]
 }
 

@@ -27,7 +27,6 @@ export const Link = ({
   href,
   variant,
   target = '_blank',
-  className,
   rel,
   ...rest
 }: LinkProps) => {
