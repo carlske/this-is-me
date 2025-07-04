@@ -87,12 +87,12 @@ p strong {
 
   .letter-line h2 {
     font-weight: 600;
-    font-size: calc(12px + 4vw);
+    font-size: calc(12px + 3vw);
   }
 
   .letter-line h3 {
     font-weight: 500;
-    font-size: clamp(2rem, 2vw, 1rem);
+    font-size: calc(12px + 2vw);
   }
 
   .letter-line p {
