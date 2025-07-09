@@ -37,4 +37,4 @@ projects:
     link: 'https://www.decathlon.com.mx'
 ---
 
-Trabaje en distinpos proyectos para el sector bancaro y a
+Trabajé principalmente en proyectos del sector bancario, enfocados en la Banca Electrónica. Entre mis responsabilidades estuvieron la construcción de Web Components reutilizables, el desarrollo de nuevas funcionalidades como la búsqueda de estados de cuenta, así como la participación en la migración y rediseño visual del home de la plataforma.

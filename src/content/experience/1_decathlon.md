@@ -9,9 +9,9 @@ duration: '4 años 6 meses'
 location: México
 website: 'https://www.decathlon.com.mx'
 tech:
-  - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-  - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-  - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+  - frontend: ['React', 'JS', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+  - backend: ['PHP', '', 'Symfony', 'Docker', 'Postgresql', 'Java', 'Sprint boot']
+  - others: ['maven', 'Kafka']
 
 projects:
   - title: Decathlon E-commerce Platform
@@ -41,5 +41,4 @@ projects:
     link: 'https://www.decathlon.com.mx'
 ---
 
-I worked with developers from many countries: Canada, France, Ukraine, Egypt, etc.  
-I work doing Frontend, PHP, and Python solutions.
+Tuve la oportunidad de colaborar en distintos productos dentro del ecosistema de e-commerce, incluyendo: el sistema de login, funcionalidades de inteligencia artificial para sugerencias personalizadas de productos, gestión de información regional para diferentes países de LATAM y Europa, así como el manejo y seguimiento de órdenes en LATAM. Todo esto formó parte de un proceso de migración tecnológica, trabajando de forma colaborativa con equipos distribuidos entre Europa y LATAM.
