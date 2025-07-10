@@ -2,7 +2,7 @@ const data = await import.meta.env
 
 export const DownloadPdf = () => {
   const handledDownload = async () => {
-    const response = await fetch(`/public/cv_carlos.pdf`)
+    const response = await fetch(`/cv_carlos.pdf`)
 
     if (!response.ok) {
       throw new Error(`Error al descargar: ${response.status}`)

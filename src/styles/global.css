@@ -4,12 +4,12 @@
 
 @theme {
   --color-*: initial;
-  --color-deep-black: #0d0d0d;
-  --color-industrial: #1f1f1f;
-  --color-matcha: #98c379;
-  --color-wasabi: #a3b9a2;
-  --color-rice: #f5f3f0;
-  --color-core-pink: #f472b6;
+  --color-deep-black: hsl(0, 0%, 5%);
+  --color-industrial: hsl(0, 0%, 12%);
+  --color-matcha: hsl(96, 38%, 62%);
+  --color-wasabi: hsl(111, 18%, 68%);
+  --color-rice: hsl(36, 27%, 95%);
+  --color-core-pink: hsl(330, 87%, 70%);
 
   --spacing-line: 5px;
   --spacing-space-line: 1rem;
