@@ -41,7 +41,7 @@ const ThemeToggle = ({ className }: ThemeSwitcherProps) => {
         />
       </button>
       <Sun
-        className={`h-[1.2rem] w-[1.2rem] transition-all duration-700 ${darkMode ? 'text-rice' : 'text-matcha'}`}
+        className={`h-[1.2rem] w-[1.2rem] transition-all duration-700 ${darkMode ? 'text-industrial' : 'text-matcha'}`}
       />
     </div>
   )

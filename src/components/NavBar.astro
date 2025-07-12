@@ -2,6 +2,7 @@
 import BackHome from '@/icons/BackHome.astro'
 import { Link } from '@/shared/components/Links/Links'
 import ThemeSwitcher from '@/shared/components/ThemeSwitcher/ThemeSwitcher'
+import AppearanceSettings from '@/shared/components/AppearanceSettings/AppearanceSettings'
 
 const { returnHome } = Astro.props
 ---
@@ -14,5 +15,5 @@ const { returnHome } = Astro.props
       )
     }
   </Link>
-  <ThemeSwitcher className="mr-3" client:load />
+  <AppearanceSettings className="mr-3" client:load />
 </nav>
