@@ -19,7 +19,7 @@ export const Chip = ({ skill }: ChipProps) => (
 
 const ChipButton = ({ onClick }: ChipButtonProps) => (
   <span
-    className="dark:bg-wasabi bg-rice dark:hover:bg-matcha dark:text-deep-black mr-1.5 rounded-lg p-2 text-xs font-bold hover:cursor-pointer hover:opacity-80"
+    className="bg-wasabi hover:bg-matcha text-deep-black mr-1.5 rounded-lg p-2 text-xs font-bold hover:cursor-pointer hover:opacity-80"
     onClick={onClick}
   >
     Show more

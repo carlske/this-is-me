@@ -18,11 +18,13 @@
     "@fontsource-variable/roboto-mono": "^5.2.5",
     "@fontsource-variable/rubik": "^5.2.5",
     "@fontsource/michroma": "^5.2.5",
+    "@lucide/astro": "^0.525.0",
     "@tailwindcss/vite": "^4.1.6",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "astro": "^5.7.12",
     "gsap": "^3.13.0",
+    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.6"

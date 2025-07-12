@@ -1,5 +1,6 @@
 import { ChipList } from '../Chips/Chips'
 import { Link } from '../Links/Links'
+import { Camera } from 'lucide-react'
 
 type TypeCardVariant = 'experience' | 'project'
 
@@ -31,21 +32,16 @@ interface CardProjectProps {
 
 const Card = ({ children, skills, url, linkText, title, typeCard }: CardBaseProps) => {
   return (
-    <article className="card bg-wasabi dark:bg-industrial rounded border border-transparent p-4 opacity-100">
+    <article className="card bg-industrial rounded border border-transparent p-4 opacity-100">
       <header className="mb-2">
-        <h2 className="dark:text-wasabi text-rice text-xl font-bold">{title}</h2>
+        <h2 className="text-wasabi text-xl font-bold">{title}</h2>
       </header>
-
-      <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
-
-      <section className="text-industrial dark:text-rice mt-4 p-2 text-sm">{children}</section>
-
+      <div className="bg-wasabi mt-4 h-[3px] w-full opacity-10"></div>
+      <section className="text-rice mt-4 p-2 text-sm">{children}</section>
       <section className="mt-1 flex flex-row flex-wrap gap-2 p-1">
         <ChipList skills={skills} />
       </section>
-
-      <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
-
+      <div className="bg-wasabi mt-4 h-[3px] w-full opacity-10"></div>
       <section className="mt-5 flex flex-row justify-around">
         <Link
           variant="secondary"
@@ -79,7 +75,7 @@ export const CardExperience = ({
         <span>{company}</span>
         <span>{dateExperience}</span>
       </div>
-      <div className="dark:bg-wasabi bg-industrial mt-4 h-[3px] w-full opacity-10"></div>
+      <div className="bg-wasabi mt-4 h-[3px] w-full opacity-10"></div>
 
       <div className="mt-4 p-1">{children}</div>
     </Card>

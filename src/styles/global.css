@@ -2,21 +2,37 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@theme {
-  --color-*: initial;
-  --color-deep-black: hsl(0, 0%, 5%);
-  --color-industrial: hsl(0, 0%, 12%);
-  --color-matcha: hsl(96, 38%, 62%);
-  --color-wasabi: hsl(111, 18%, 68%);
-  --color-rice: hsl(36, 27%, 95%);
-  --color-core-pink: hsl(330, 87%, 70%);
+@layer base {
+  :root {
+    --color-deep-black: hsl(0, 0%, 5%);
+    --color-industrial: hsl(0, 0%, 12%);
+    --color-matcha: hsl(96, 38%, 62%);
+    --color-wasabi: hsl(111, 18%, 68%);
+    --color-rice: hsl(36, 27%, 95%);
+    --color-core-pink: hsl(330, 87%, 70%);
+    --spacing-space-line: 1rem;
+    background: var(--color-deep-black);
+  }
 
-  --spacing-line: 5px;
-  --spacing-space-line: 1rem;
+  :root[data-theme='light'] {
+    --color-deep-black: hsl(0, 0%, 100%);
+    --color-industrial: hsl(0, 0%, 95%);
+    --color-matcha: hsl(96, 38%, 42%);
+    --color-wasabi: hsl(111, 18%, 38%);
+    --color-rice: hsl(36, 27%, 5%);
+    --color-core-pink: hsl(330, 87%, 45%);
+    background: var(--color-deep-black);
+  }
 }
 
-:root {
-  background-color: var(--color-rice);
+@theme {
+  --color-matcha: var(--color-matcha);
+  --color-wasabi: var(--color-wasabi);
+  --color-rice: var(--color-rice);
+  --color-core-pink: var(--color-core-pink);
+  --color-deep-black: var(--color-deep-black);
+  --color-industrial: var(--color-industrial);
+  --spacing-line: var(--spacing-space-line);
 }
 
 @utility grid-simple {

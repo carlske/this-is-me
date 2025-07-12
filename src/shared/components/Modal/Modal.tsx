@@ -9,7 +9,7 @@ const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
   if (!isOpen) return null
 
   return (
-    <div className="bg-wasabi dark:bg-industrial fixed inset-0 z-10 flex items-center justify-center bg-opacity-10">
+    <div className="bg-industrial fixed inset-0 z-10 flex items-center justify-center bg-opacity-10">
       <div className="bg-rice w-full rounded-2xl p-6 shadow-lg">
         {title && <h2 className="mb-4 text-xl font-bold">{title}</h2>}
         <div className="mb-4">{children}</div>

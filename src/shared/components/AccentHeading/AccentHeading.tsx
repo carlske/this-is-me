@@ -3,17 +3,19 @@ import { isValidElement } from 'react'
 interface AccentHeadingTitleProps {
   children: React.ReactNode
   tag?: 'h1' | 'h2' | 'h3' | 'p'
-  color: 'matcha' | 'rice' | 'wasabi'
+  color: 'matcha' | 'rice' | 'wasabi' | 'pink' | 'deepblack' | 'industrial'
   animation: 'true' | 'false'
   position: 'baseline' | 'center'
   className?: string
 }
 
 const colorMap = {
-  matcha: 'dark:text-matcha text-rice',
+  matcha: 'text-matcha',
   pink: 'text-core-pink',
-  wasabi: 'dark:text-wasabi text-core-pink',
-  rice: 'dark:text-rice text-industrial',
+  wasabi: 'text-wasabi',
+  rice: 'text-rice',
+  deepblack: 'text-deep-black',
+  industrial: 'text-industrial',
 }
 
 const AccentHeadingTitleBase = ({
