@@ -14,12 +14,12 @@ tech:
   - others: ['maven', 'Kafka']
 
 projects:
-  - title: Decathlon E-commerce Platform
+  - title: E-commerce
     description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
     tech:
       - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - backend: ['PHP', 'Symfony', 'Svelte', 'Postgresql']
+      - others: ['Docker']
     link: 'https://www.decathlon.com.mx'
     private: true
 
@@ -32,7 +32,7 @@ projects:
 
     link: 'https://www.decathlon.com.mx'
 
-  - title: Identificador Regional - LATAM
+  - title: Identificador Regional
     description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
     tech:
       - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']

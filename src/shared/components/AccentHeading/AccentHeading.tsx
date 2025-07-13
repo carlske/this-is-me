@@ -31,6 +31,12 @@ const AccentHeadingTitleBase = ({
   const fontColor = colorMap[color] || 'text-matcha'
   let text = ''
 
+  //if children is a string, we can use it directly react
+  if (typeof children === 'string') {
+    text = children.replace(' ', '_')
+  }
+
+  // if children is from astro, it will be a object
   if (isValidElement(children)) {
     const value = (children.props as { value: string }).value
     text = String(value)

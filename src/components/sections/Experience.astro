@@ -13,27 +13,29 @@ const experiences = await getCollection('experience')
   <div class="grid w-5/6 grid-cols-1 gap-1">
     {
       await Promise.all(
-        experiences.map(async (exp : any) => {
+        experiences.map(async (exp: any) => {
           const { data } = exp
-          const { position, company, employment_type, start_date, end_date, tech, id } = data
-
-          const finishDate = end_date ?? 'now'
+          const { position, company, employment_type, start_date, end_date, tech, id, location } =
+            data
 
           const { Content } = await render(exp)
 
           return (
-            <CardExperience
-              company={`${company} · ${employment_type}`}
-              startDate={start_date}
-              finishDate={finishDate}
-              skills={normalizeTech(tech)}
-              pageId={id}
-              position={position}
-              client:load
-            >
-              <Content />
-            </CardExperience>
-            <ArrowCard class="w-15 h-15 mb-8 mt-8" />
+            <>
+              <CardExperience
+                company={`${company} · ${employment_type}`}
+                startDate={start_date}
+                finishDate={end_date}
+                skills={normalizeTech(tech)}
+                pageId={id}
+                position={position}
+                location={location}
+                client:load
+              >
+                <Content />
+              </CardExperience>
+              <ArrowCard class="w-15 h-15 mb-8 mt-8" />
+            </>
           )
         }),
       )

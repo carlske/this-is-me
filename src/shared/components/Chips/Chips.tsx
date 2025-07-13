@@ -14,7 +14,9 @@ interface ChipButtonProps {
 }
 
 export const Chip = ({ skill }: ChipProps) => (
-  <span className="bg-core-pink text-rice mr-1.5 rounded-lg p-2 text-xs font-bold">{skill}</span>
+  <span className="bg-core-pink mr-1.5 rounded-lg p-2 text-xs font-bold text-neutral-100">
+    {skill}
+  </span>
 )
 
 const ChipButton = ({ onClick }: ChipButtonProps) => (

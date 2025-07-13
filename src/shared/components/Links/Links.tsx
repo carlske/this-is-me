@@ -16,7 +16,8 @@ interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'classN
 const variantClasses: Record<LinkVariant, string> = {
   primary:
     'hover:cursor-pointer border-[3px] border-wasabi hover:border-matcha hover:bg-matcha hover:text-deep-black p-3 rounded-xl',
-  secondary: 'hover:cursor-pointer bg-matcha  text-deep-black b hover:opacity-90 p-3 rounded-xl',
+  secondary:
+    'border-core-pink hover:border-wasabi text-rice  cursor-pointer  rounded-[12px] hover:opacity-90  rounded-xl border-[3px] p-2',
   ghost: '',
 }
 
@@ -24,6 +25,7 @@ export const Link = ({
   children,
   ariaLabel,
   href,
+  className,
   variant,
   target = '_blank',
   rel,

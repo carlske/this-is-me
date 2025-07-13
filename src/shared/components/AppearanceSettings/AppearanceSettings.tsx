@@ -59,7 +59,7 @@ const AppearanceSettings = ({ className }: AppearanceSettingsProps) => {
               <X className="h-5 w-5" />
             </button>
             <h2 id="appearance-modal-title" className="mb-4 text-lg font-semibold">
-              Appearance Settings
+              Configuración
             </h2>
             <div id="appearance-modal-desc" className="flex flex-col gap-4 text-sm">
               <ThemeSwitcher />
