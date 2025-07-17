@@ -1,12 +1,31 @@
 export const DownloadPdf = () => {
-  const handledDownload = () => {}
+  const handledDownload = async () => {
+    const response = await fetch(`/cv_carlos.pdf`)
+
+    if (!response.ok) {
+      throw new Error(`Error al descargar: ${response.status}`)
+    }
+
+    const pdf = await response.blob()
+
+    const url = window.URL.createObjectURL(pdf)
+
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'cv_carlosv_diaz.pdf'
+    document.body.appendChild(link)
+    link.click()
+
+    link.remove()
+    window.URL.revokeObjectURL(url)
+  }
 
   return (
     <button
-      className="dark:bg-wasabi bg-core-pink dark:text-industrial text-rice rounded-xl p-5 font-bold hover:cursor-pointer hover:opacity-80"
+      className="bg-matcha text-industrial rounded-xl p-5 font-bold hover:cursor-pointer hover:opacity-80"
       onClick={handledDownload}
     >
-      Descarga mi cv
+      Descargar CV
     </button>
   )
 }

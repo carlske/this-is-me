@@ -2,21 +2,37 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@theme {
-  --color-*: initial;
-  --color-deep-black: #0d0d0d;
-  --color-industrial: #1f1f1f;
-  --color-matcha: #98c379;
-  --color-wasabi: #a3b9a2;
-  --color-rice: #f5f3f0;
-  --color-core-pink: #f472b6;
+@layer base {
+  :root {
+    --color-deep-black: hsl(0, 0%, 5%);
+    --color-industrial: hsl(0, 0%, 12%);
+    --color-matcha: hsl(96, 38%, 62%);
+    --color-wasabi: hsl(111, 18%, 68%);
+    --color-rice: hsl(36, 27%, 95%);
+    --color-core-pink: hsl(330, 87%, 70%);
+    --spacing-space-line: 1rem;
+    background: var(--color-deep-black);
+  }
 
-  --spacing-line: 5px;
-  --spacing-space-line: 1rem;
+  :root[data-theme='light'] {
+    --color-deep-black: hsl(0, 0%, 100%);
+    --color-industrial: hsl(0, 0%, 95%);
+    --color-matcha: hsl(96, 38%, 42%);
+    --color-wasabi: hsl(111, 18%, 38%);
+    --color-rice: hsl(36, 27%, 5%);
+    --color-core-pink: hsl(330, 87%, 45%);
+    background: var(--color-deep-black);
+  }
 }
 
-:root {
-  background-color: var(--color-rice);
+@theme {
+  --color-matcha: var(--color-matcha);
+  --color-wasabi: var(--color-wasabi);
+  --color-rice: var(--color-rice);
+  --color-core-pink: var(--color-core-pink);
+  --color-deep-black: var(--color-deep-black);
+  --color-industrial: var(--color-industrial);
+  --spacing-line: var(--spacing-space-line);
 }
 
 @utility grid-simple {
@@ -87,12 +103,12 @@ p strong {
 
   .letter-line h2 {
     font-weight: 600;
-    font-size: calc(12px + 4vw);
+    font-size: calc(12px + 3vw);
   }
 
   .letter-line h3 {
     font-weight: 500;
-    font-size: clamp(2rem, 2vw, 1rem);
+    font-size: calc(12px + 2vw);
   }
 
   .letter-line p {
@@ -156,4 +172,7 @@ p strong {
   top: 0;
   bottom: 0;
   z-index: 1;
+}
+
+.background-profile {
 }

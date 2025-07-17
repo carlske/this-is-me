@@ -1,0 +1,23 @@
+<svg width="100%" height="100%" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fondo base (color principal de tu portafolio) -->
+    <rect width="100%" height="100%" fill="#1A0933" /> <!-- Morado oscuro -->
+    
+    <!-- Líneas aleatorias (pared de contenedor) -->
+    <g stroke="#6E45A3" stroke-opacity="0.6">
+        <!-- Líneas verticales (gruesas/delgadas) -->
+        <line x1="100" y1="50" x2="100" y2="850" stroke-width="2" />
+        <line x1="300" y1="100" x2="300" y2="800" stroke-width="1.5" />
+        <line x1="500" y1="0" x2="500" y2="900" stroke-width="3" />
+        <line x1="700" y1="150" x2="700" y2="750" stroke-width="1" />
+        <line x1="900" y1="50" x2="900" y2="850" stroke-width="2.5" />
+        
+        <!-- Líneas horizontales (para efecto de paneles) -->
+        <line x1="50" y1="200" x2="1350" y2="200" stroke-width="1.2" />
+        <line x1="150" y1="400" x2="1250" y2="400" stroke-width="0.8" />
+        <line x1="250" y1="600" x2="1150" y2="600" stroke-width="1.5" />
+    </g>
+    
+    <!-- Efecto de oxidación/manchas (opcional) -->
+    <circle cx="400" cy="500" r="30" fill="#B388FF" opacity="0.05" />
+    <circle cx="800" cy="300" r="50" fill="#B388FF" opacity="0.03" />
+</svg>

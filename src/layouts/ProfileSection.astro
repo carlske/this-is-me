@@ -2,7 +2,7 @@
 import { AccentHeadingSubtitle } from '@/shared/components/AccentHeading/AccentHeading'
 const { heading, className, background } = Astro.props
 
-let bg = 'bg-rice dark:bg-deep-black'
+let bg = 'bg-deep-black'
 
 if (background) {
   bg = background
@@ -10,7 +10,7 @@ if (background) {
 ---
 
 <section class=`w-screen ${bg}` aria-label={`${heading}-seccion`}>
-  <article class="bg-rice dark:bg-deep-black sticky bottom-0 top-0 z-10 p-8">
+  <article class="bg-deep-black sticky bottom-0 top-0 z-10 p-8">
     <AccentHeadingSubtitle color="rice" animation="true" position="center"
       >{heading}</AccentHeadingSubtitle
     >

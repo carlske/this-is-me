@@ -6,7 +6,7 @@ interface ChipProps {
 }
 
 interface ChipListProps {
-  skills: string[]
+  skills: Record<string, string>
 }
 
 interface ChipButtonProps {
@@ -14,12 +14,14 @@ interface ChipButtonProps {
 }
 
 export const Chip = ({ skill }: ChipProps) => (
-  <span className="bg-core-pink text-rice mr-1.5 rounded-lg p-2 text-xs font-bold">{skill}</span>
+  <span className="text-rice mr-1.5 rounded-lg bg-gray-300 p-2 text-xs font-bold dark:bg-neutral-700">
+    {skill}
+  </span>
 )
 
 const ChipButton = ({ onClick }: ChipButtonProps) => (
   <span
-    className="dark:bg-wasabi bg-rice dark:hover:bg-matcha dark:text-deep-black mr-1.5 rounded-lg p-2 text-xs font-bold hover:cursor-pointer hover:opacity-80"
+    className="bg-wasabi hover:bg-matcha text-deep-black mr-1.5 rounded-lg p-2 text-xs font-bold hover:cursor-pointer hover:opacity-80"
     onClick={onClick}
   >
     Show more
@@ -29,20 +31,34 @@ const ChipButton = ({ onClick }: ChipButtonProps) => (
 export const ChipList = ({ skills }: ChipListProps) => {
   const [open, setOpen] = useState(false)
 
+  const { backend, frontend, others } = skills
+
   const handleShowMore = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
   return (
     <>
-      {skills.slice(0, 3).map((skill) => (
-        <Chip key={skill} skill={skill} />
-      ))}
-      {skills.length > 3 && <ChipButton onClick={handleShowMore} />}
+      <Chip skill="Backend" />
+      <Chip skill="Frontend" />
+      <ChipButton onClick={handleShowMore} />
 
       {open && (
         <Modal isOpen={open} onClose={handleClose} title="Skills">
+          <h3 className="mb-4 text-xl font-bold">Backend</h3>
           <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
+            {backend.split(',').map((skill) => (
+              <Chip key={skill} skill={skill} />
+            ))}
+          </div>
+          <h3 className="mb-4 text-xl font-bold">Frontend</h3>
+          <div className="flex flex-wrap gap-2">
+            {frontend.split(',').map((skill) => (
+              <Chip key={skill} skill={skill} />
+            ))}
+          </div>
+          <h3 className="mb-4 text-xl font-bold">Otros</h3>
+          <div className="flex flex-wrap gap-2">
+            {others.split(',').map((skill) => (
               <Chip key={skill} skill={skill} />
             ))}
           </div>

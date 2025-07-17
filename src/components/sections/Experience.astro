@@ -1,54 +1,49 @@
 ---
-import ArrowCard from "@/components/shared/ArrowCard.astro";
-import {CardExperience} from "@/shared/components/Cards/Cards";
-import { getCollection } from "astro:content";
-import type { Experience } from "@/shared/types/Experience";
-import ProfileSection from "@/layouts/ProfileSection.astro";
-import { DownloadPdf } from "@/shared/components/DownloadPdf/DownloadPdf";
+import { CardExperience } from '@/shared/components/Cards/Cards'
+import { getCollection, render } from 'astro:content'
+import ProfileSection from '@/layouts/ProfileSection.astro'
+import { DownloadPdf } from '@/shared/components/DownloadPdf/DownloadPdf'
+import normalizeTech from '@/shared/utils/utils'
+import ArrowCard from '../shared/ArrowCard.astro'
 
-const experiences = await getCollection("experience");
-
+const experiences = await getCollection('experience')
 ---
 
 <ProfileSection id="experience" heading="Experiencia">
-        <div class="w-5/6 grid grid-cols-1 gap-1">
-            {
-                experiences.map((experience : Experience) => {
-                    const {  data } = experience
+  <div class="grid w-5/6 grid-cols-1 gap-1">
+    <span class="text-rice mt-1.5 text-center text-8xl font-bold">2025</span>
+    <ArrowCard class="w-15 h-15 mb-8 mt-8" />
 
-                    const {
-                        position,
-                        company,
-                        employment_type,
-                        start_date,
-                        end_date,
-                        skills,
-                        id,
-                    } = data;
+    {
+      await Promise.all(
+        experiences.map(async (exp: any) => {
+          const { data } = exp
 
-                    let finishDate = 'now'
+          const { position, company, employment_type, startDate, endDate, tech, id, location } =
+            data
 
-                    if (end_date != null){
-                        finishDate = end_date
-                    }
+          const { Content } = await render(exp)
 
-                    return (
-                        <CardExperience
-                            company={company.concat(' · ',employment_type) }
-                            startDate={start_date}
-                            finishDate={finishDate}
-                            skills={skills.join(',')}
-                            pageId={id}
-                            position={position}
-                            client:load
-                        >
-                        </CardExperience>
-                        <div>
-                            <ArrowCard class="mt-8 mb-8 w-15 h-15"/>  
-                        </div>  
-                    );
-                })
-            }
-            <DownloadPdf/>
-        </div>
+          return (
+            <>
+              <CardExperience
+                company={`${company} · ${employment_type}`}
+                startDate={startDate}
+                finishDate={endDate}
+                skills={normalizeTech(tech)}
+                pageId={id}
+                position={position}
+                location={location}
+                client:load
+              >
+                <Content />
+              </CardExperience>
+              <ArrowCard class="w-15 h-15 mb-8 mt-8" />
+            </>
+          )
+        }),
+      )
+    }
+    <DownloadPdf client:load />
+  </div>
 </ProfileSection>

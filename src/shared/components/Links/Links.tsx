@@ -17,7 +17,7 @@ const variantClasses: Record<LinkVariant, string> = {
   primary:
     'hover:cursor-pointer border-[3px] border-wasabi hover:border-matcha hover:bg-matcha hover:text-deep-black p-3 rounded-xl',
   secondary:
-    'hover:cursor-pointer dak:bg-matcha  bg-rice text-deep-black b hover:opacity-90 p-3 rounded-xl',
+    'border-core-pink  dark:text-rice hover:bg-core-pink  hover:opacity-80 cursor-pointer  rounded-[12px] rounded-xl border-[3px] p-2',
   ghost: '',
 }
 
@@ -25,9 +25,9 @@ export const Link = ({
   children,
   ariaLabel,
   href,
+  className,
   variant,
   target = '_blank',
-  className,
   rel,
   ...rest
 }: LinkProps) => {

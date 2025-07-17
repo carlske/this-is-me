@@ -1,47 +1,52 @@
 ---
-id: '3'
+id: 3
 position: Web Developer
 company: Ironbit
 employment_type: Jornada completa
-start_date: '2021-01'
-end_date: null
-duration: '4 años 6 meses'
+startDate: '2018-01'
+endDate: '2019-10'
+duration: '1 año 9 meses'
 location: México
-website: 'https://www.decathlon.com.mx'
-skills:
-  - Frontend
-  - Backend
-  - Python
-  - JS
-  - CSS
+website: ''
+tech:
+  - frontend: ['JS', 'Web Components', 'Vue', 'Angular', 'CSS']
+  - backend: ['Python', 'Django', 'Django REST framework']
+  - others: ['Docker']
+
 projects:
-  - title: Kidzania
-    description: Desarrollo, Diseño e implementacion de web compomnents para la banca electronica.
+  - title: KidZania
+    description: >
+      **Diseño, desarrollo e implementación** de un sistema administrativo para la gestión de boletos en las apps móviles de KidZania.  
+      Incluyó funcionalidades como la **visualización interactiva del mapa** de sedes y **reglas de asignación inteligente**.  
+
+      - El panel optimizó la experiencia del personal operativo, **mejorando la eficiencia en la asignación de boletos** y **reduciendo errores operativos en más de un 20%**.
     tech:
-      - Python
-      - Java Script
-      - Django
-      - Angular
-      - Postgres
-    link: 'https://www.decathlon.com.mx'
+      - frontend: ['JS', 'CSS']
+      - backend: ['Django', 'Python', 'Django REST framework', 'Celery', 'Redis']
+      - others: ['Docker']
+    link: 'https://mexico.kidzania.com/mx-es'
     private: true
-  - title: Todo gas
-    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+
+  - title: Todo Gas
+    description: >
+      Desarrollo de una **API REST** para la **compra de gas desde la app móvil**, incluyendo **seguimiento en tiempo real de pedidos** y visualización de **placas de las pipas asignadas**.  
+      Permitió **automatizar el proceso de solicitud**, **mejorar la trazabilidad de las órdenes** y **optimizar la comunicación entre usuarios y operadores**.
     tech:
-      - Python
-      - Django
-      - Postgres
+      - frontend: ['JS', 'CSS']
+      - backend: ['Django', 'Python', 'Django REST framework', 'Celery', 'Redis']
+      - others: ['Docker']
     link: 'https://www.todogas.com.mx/'
+
   - title: RCO
-    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    description: >
+      Desarrollé una página web **autoadministrable** con **Django Admin**, en la que los cambios realizados desde el panel de administración se reflejan de inmediato en la interfaz creada con **Angular**.
     tech:
-      - Python
-      - Django
-      - Postgres
-      - Java Script
-      - Angular
+      - frontend: ['Angular', 'JS', 'CSS']
+      - backend: ['Python', 'Django']
+      - others: ['Docker']
     link: 'https://www.redviacorta.mx/es/'
 ---
 
-I work with developers from many countries: Canada, France, Ukraine, Egypt, etc.  
-I work doing Frontend, PHP, and Python solutions.
+Durante mi tiempo en Ironbit, tuve la oportunidad de participar en el desarrollo de proyectos administrables tanto en frontend como en backend, utilizando tecnologías como Python, Angular y Vue.
+
+Algunos de los proyectos en los que colaboré incluyen <strong>KidZania</strong> y <strong>Todo Gas</strong>.
