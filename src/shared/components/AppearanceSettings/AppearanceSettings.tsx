@@ -3,6 +3,7 @@ import { Settings } from 'lucide-react'
 import { X } from 'lucide-react'
 import ThemeSwitcher from '@/shared/components/ThemeSwitcher/ThemeSwitcher'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
+import Logo from '@/assets/logo.webp?url'
 
 interface AppearanceSettingsProps {
   className?: string
@@ -39,16 +40,25 @@ const AppearanceSettings = ({ className }: AppearanceSettingsProps) => {
       </button>
       {open && (
         <div
-          className="bg-industrial fixed inset-0 z-50 flex items-center justify-center opacity-100"
+          className="bg-industrial fixed inset-0 z-50 flex flex-col items-center opacity-100"
           role="dialog"
           aria-modal="true"
           aria-labelledby="appearance-modal-title"
           aria-describedby="appearance-modal-desc"
         >
+          <img
+            src={Logo}
+            loading="lazy"
+            width={600}
+            height={600}
+            className="w-2xs object-cover"
+            alt="Background image"
+          />
+
           <div
             ref={modalRef}
             tabIndex={-1}
-            className="relative min-w-[300px] rounded-lg bg-white p-6 shadow-lg outline-none"
+            className="relative top-0 w-0 min-w-[300px] rounded-lg bg-white p-4 shadow-lg outline-none"
           >
             <button
               className="absolute right-2 top-2 cursor-pointer text-gray-500 hover:text-gray-700"

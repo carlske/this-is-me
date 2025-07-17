@@ -3,6 +3,8 @@ import { AccentHeadingSubheading } from '../AccentHeading/AccentHeading'
 import { ChipList } from '../Chips/Chips'
 import { Link } from '../Links/Links'
 import { Calendar, MapPin, ExternalLink, ChevronUp, ChevronDown, FolderOpen } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
+import parse from 'html-react-parser'
 
 type TypeCardVariant = 'experience' | 'project'
 
@@ -58,12 +60,12 @@ const Card = ({
   let description: string = ''
 
   if (typeof children === 'string') {
-    description = children.trim().replace(/<\/?p>/g, '')
+    description = children.trim()
   }
-  // if children is from astro, it will be a object
+
   if (isValidElement(children)) {
     const value = (children.props as { value: string }).value
-    description = value.trim().replace(/<\/?p>/g, '')
+    description = value.trim()
   }
 
   useEffect(() => {
@@ -73,13 +75,56 @@ const Card = ({
     }
   }, [isExpanded])
 
-  const truncateText = (text: string, maxLength = 100) => {
-    if (text.length <= maxLength) return text
-    return text.slice(0, maxLength) + '...'
+  const truncateMarkdown = (markdown: string, maxLength: number): string => {
+    const plain = markdown.replace(/\*\*(.*?)\*\*/g, '$1')
+    if (plain.length <= maxLength) return markdown
+
+    const cutoffIndex = plain.slice(0, maxLength).length
+    const truncated = markdown.slice(0, cutoffIndex)
+
+    const openBold = (truncated.match(/\*\*/g) || []).length % 2 !== 0
+    return openBold ? truncated + '**...' : truncated + '...'
   }
 
   const isShowMoreInforButton = (description: string, maxLength: number) => {
     return description.length > maxLength
+  }
+
+  const showContent = (type: string) => {
+    const content = isExpanded ? description : truncateMarkdown(description, maxLength)
+    return (
+      <div
+        ref={isExpanded ? expandedContentRef : contentRef}
+        className="overflow-hidden transition-all duration-300"
+      >
+        {type === 'experience' ? parse(content) : <ReactMarkdown>{content}</ReactMarkdown>}
+      </div>
+    )
+  }
+
+  const showFullContent = () => {
+    return (
+      isShowMoreInforButton(description, maxLength) && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-rice hover:text-primary/80 mt-2 flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 hover:gap-2"
+          aria-expanded={isExpanded}
+          aria-label={isExpanded ? 'Mostrar menos contenido' : 'Mostrar más contenido'}
+        >
+          {isExpanded ? (
+            <>
+              <span>Mostrar menos</span>
+              <ChevronUp className="h-4 w-4 transition-transform duration-300" />
+            </>
+          ) : (
+            <>
+              <span>Mostrar más</span>
+              <ChevronDown className="h-4 w-4 transition-transform duration-300" />
+            </>
+          )}
+        </button>
+      )
+    )
   }
 
   return (
@@ -120,29 +165,8 @@ const Card = ({
                 <div className="bg-wasabi mt-4 h-[3px] w-full opacity-10"></div>
               </>
             )}
-            <div className="mt-2 p-1">
-              {!isExpanded ? truncateText(description, maxLength) : description}
-            </div>
-            {isShowMoreInforButton(description, maxLength) && (
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="text-rice hover:text-primary/80 mt-2 flex cursor-pointer items-center gap-1 text-sm font-medium transition-all duration-200 hover:gap-2"
-                aria-expanded={isExpanded}
-                aria-label={isExpanded ? 'Mostrar menos contenido' : 'Mostrar más contenido'}
-              >
-                {isExpanded ? (
-                  <>
-                    <span>Mostrar menos</span>
-                    <ChevronUp className="h-4 w-4 transition-transform duration-300" />
-                  </>
-                ) : (
-                  <>
-                    <span>Mostrar más</span>
-                    <ChevronDown className="h-4 w-4 transition-transform duration-300" />
-                  </>
-                )}
-              </button>
-            )}
+            <div className="mt-2 p-1">{showContent(typeCard)}</div>
+            {showFullContent()}
           </section>
           <section className="mt-5 flex flex-row flex-wrap gap-2 p-1">
             <ChipList skills={skills} />
@@ -191,7 +215,6 @@ export const CardExperience = ({ pageId, children, position, ...props }: CardExp
 }
 
 export const CardProject = ({ children, ...props }: CardProjectProps) => {
-  console.log('CardProject props:', children)
   return (
     <Card {...props} linkText="Ver mas" typeCard="project">
       {children}

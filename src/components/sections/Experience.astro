@@ -11,11 +11,15 @@ const experiences = await getCollection('experience')
 
 <ProfileSection id="experience" heading="Experiencia">
   <div class="grid w-5/6 grid-cols-1 gap-1">
+    <span class="text-rice mt-1.5 text-center text-8xl font-bold">2025</span>
+    <ArrowCard class="w-15 h-15 mb-8 mt-8" />
+
     {
       await Promise.all(
         experiences.map(async (exp: any) => {
           const { data } = exp
-          const { position, company, employment_type, start_date, end_date, tech, id, location } =
+
+          const { position, company, employment_type, startDate, endDate, tech, id, location } =
             data
 
           const { Content } = await render(exp)
@@ -24,8 +28,8 @@ const experiences = await getCollection('experience')
             <>
               <CardExperience
                 company={`${company} · ${employment_type}`}
-                startDate={start_date}
-                finishDate={end_date}
+                startDate={startDate}
+                finishDate={endDate}
                 skills={normalizeTech(tech)}
                 pageId={id}
                 position={position}

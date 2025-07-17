@@ -17,8 +17,8 @@ export interface ExperienceData {
   position: string
   company: string
   employment_type: string
-  start_date: string
-  end_date: string | null
+  startDate: string
+  endDate: string
   duration: string
   location: string
   website: string

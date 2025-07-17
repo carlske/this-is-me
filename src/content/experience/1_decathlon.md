@@ -1,44 +1,58 @@
 ---
-id: '1'
+id: 1
 position: Frontend Developer
 company: Decathlon Mexico
 employment_type: Jornada completa
-start_date: '2021-01'
-end_date: '2025-05'
+startDate: '2021-01'
+endDate: '2025-05'
 duration: '4 años 6 meses'
 location: México
 website: 'https://www.decathlon.com.mx'
 tech:
   - frontend: ['React', 'JS', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-  - backend: ['PHP', '', 'Symfony', 'Docker', 'Postgresql', 'Java', 'Sprint boot']
-  - others: ['maven', 'Kafka']
+  - backend: ['PHP', 'Symfony', 'Docker', 'Postgresql', 'Java', 'Spring Boot']
+  - others: ['Maven', 'Kafka']
 
 projects:
   - title: E-commerce
-    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    description: >
+      Formé parte del proceso de **migración tecnológica** de la plataforma de e-commerce (LATAM), con foco en mejorar la **experiencia del usuario** en el proceso de compra.
+
+       - Tras estabilizar el nuevo stack, integramos **IA en el carrito y producto**, y optimizamos formularios para capturar **información relevante en login**.
+
+       - Un proyecto clave para evolucionar la plataforma hacia una experiencia más **ágil, inteligente y personalizada**.
     tech:
-      - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - backend: ['PHP', 'Symfony', 'Svelte', 'Postgresql']
+      - frontend: ['SASS', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - backend: ['PHP', 'Symfony', 'Python', 'Postgresql']
       - others: ['Docker']
     link: 'https://www.decathlon.com.mx'
     private: true
 
   - title: ShipperBox
-    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    description: >
+      Participé en el desarrollo de un sistema que **extraía las órdenes generadas por el e-commerce** para crear las **guías de envío (stickers)** utilizadas en la preparación de los paquetes. 
+       
+      Además, implementamos un **nuevo carrier logístico**, lo que nos permitió **ampliar la cobertura a códigos postales** donde antes no se podía entregar.
     tech:
-      - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-
+      - frontend: ['Angular', 'SASS']
+      - backend: ['Java', 'Maven', 'Spring Boot', 'Cucumber', 'Mockito']
+      - others: ['Apache Kafka', 'Docker', 'HashiCorp Vault']
     link: 'https://www.decathlon.com.mx'
 
   - title: Identificador Regional
-    description: Desarrollo del frontend para el portal de ventas en línea, integrando componentes reusables con React y Web Components.
+    description: >
+      Desarrollamos un **identificador regional para LATAM**, capaz de adaptarse a distintos formatos legales como el **RUT (Chile)**, **NIT (Colombia)** o **RFC (México)**.  
+
+      - Esta solución permitió resolver **inconsistencias fiscales** y problemas de **facturación o validación** durante el proceso de compra, adaptándose a los requerimientos legales de cada país.
     tech:
-      - frontend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - backend: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
-      - others: ['React', 'Web Components', 'Svelte', 'TailwindCSS', 'JS', 'CSS']
+      - frontend: ['JS', 'Svelte', 'SASS']
+      - backend: ['PHP', 'MySQL', 'Symfony', 'PrestaShop']
+      - others: ['Docker']
     link: 'https://www.decathlon.com.mx'
 ---
 
-Tuve la oportunidad de colaborar en distintos productos dentro del ecosistema de e-commerce, incluyendo: el sistema de login, funcionalidades de inteligencia artificial para sugerencias personalizadas de productos, gestión de información regional para diferentes países de LATAM y Europa, así como el manejo y seguimiento de órdenes en LATAM. Todo esto formó parte de un proceso de migración tecnológica, trabajando de forma colaborativa con equipos distribuidos entre Europa y LATAM.
+Colaboración en <strong>múltiples productos</strong> dentro del ecosistema de e-commerce como parte de un <strong>proceso de migración tecnológica</strong>.
+
+Participé en el desarrollo de funcionalidades clave como el <strong>sistema de login</strong>, módulos de <strong>inteligencia artificial</strong> para <strong>recomendaciones personalizadas</strong>, <strong>gestión de información regional</strong> para LATAM y Europa, y el <strong>manejo y seguimiento de órdenes</strong> en LATAM.
+
+El trabajo se realizó en colaboración con <strong>equipos distribuidos</strong> entre Europa y América Latina, aplicando <strong>buenas prácticas de desarrollo escalable</strong> y <strong>trabajo remoto</strong>.

@@ -24,10 +24,10 @@ export const DownloadPdf = () => {
 
   return (
     <button
-      className="bg-wasabi text-industrial rounded-xl p-5 font-bold hover:cursor-pointer hover:opacity-80"
+      className="bg-matcha text-industrial rounded-xl p-5 font-bold hover:cursor-pointer hover:opacity-80"
       onClick={handledDownload}
     >
-      Descarga mi cv
+      Descargar CV
     </button>
   )
 }
