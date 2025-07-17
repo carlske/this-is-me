@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react'
 import { Settings } from 'lucide-react'
 import { X } from 'lucide-react'
 import ThemeSwitcher from '@/shared/components/ThemeSwitcher/ThemeSwitcher'
-import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 import Logo from '@/assets/logo.webp?url'
 
 interface AppearanceSettingsProps {
