@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content'
+import { getCollection } from 'astro:content'
 import Layout from '@/layouts/Layout.astro'
 import type { Experience, Project } from '@/shared/types/Experience'
 import Header from '@/components/experience/Header.astro'
@@ -22,13 +22,7 @@ export async function getStaticPaths() {
 
 const { data } = Astro.props
 
-const { position, company, start_date, end_date, location, projects } = data
-
-let finishDate = 'now'
-
-if (end_date != null) {
-  finishDate = end_date
-}
+const { position, company, startDate, endDate, location, projects } = data
 ---
 
 <Layout>
@@ -44,7 +38,7 @@ if (end_date != null) {
         <CalendarIcon class="h-6 w-6" />
         <div>
           <span>{location}</span>
-          <span>{start_date.concat(',', finishDate)}</span>
+          <span>{startDate.concat(',', endDate)}</span>
         </div>
       </article>
       <div class="mt-10 grid w-5/6 grid-cols-1 gap-10">

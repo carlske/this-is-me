@@ -1,5 +1,3 @@
-const data = await import.meta.env
-
 export const DownloadPdf = () => {
   const handledDownload = async () => {
     const response = await fetch(`/cv_carlos.pdf`)
