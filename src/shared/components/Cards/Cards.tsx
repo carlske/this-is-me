@@ -130,10 +130,6 @@ const Card = ({
   return (
     <>
       <article className="card bg-industrial w-full rounded border border-transparent duration-300 hover:-translate-y-1.5">
-        <div className="bg-wasabi absolute h-[50px] w-[3px]">
-          <div className="a after:bg-wasabi after:absolute after:h-[3px] after:w-[60px] after:content-['']"></div>
-        </div>
-
         <div className="p-6">
           <header className="mb-2">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
@@ -189,9 +185,6 @@ const Card = ({
               </div>
             </Link>
           </section>
-        </div>
-        <div className="bg-wasabi absolute right-0 mt-[-3.8em] h-[60px] w-[3px] rotate-180 transform">
-          <div className="after:bg-wasabi after:absolute after:h-[3px] after:w-[60px] after:content-['']"></div>
         </div>
       </article>
     </>

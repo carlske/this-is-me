@@ -1,28 +1,12 @@
-import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
+import useGlobalTheme from '@/shared/hooks/useGlobalTheme'
 
 interface ThemeSwitcherProps {
   className?: string
 }
 
 const ThemeToggle = ({ className }: ThemeSwitcherProps) => {
-  const [darkMode, setDarkMode] = useState(true)
-  const [hydrated, setHydrated] = useState(false)
-
-  useEffect(() => {
-    const localStorageTheme = localStorage.getItem('darkTheme')
-    setDarkMode(localStorageTheme !== 'light')
-    setHydrated(true)
-  }, [])
-
-  useEffect(() => {
-    if (!hydrated) return
-    const theme = darkMode ? 'dark' : 'light'
-    document.documentElement.dataset.theme = theme
-    localStorage.setItem('darkTheme', theme)
-  }, [darkMode])
-
-  if (!hydrated) return null
+  const { darkMode, setDarkMode } = useGlobalTheme()
 
   let globalClass = 'flex items-center space-x-2 transition-all duration-700'
 
