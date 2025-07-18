@@ -170,6 +170,17 @@ p strong {
       scale: 100%;
     }
   }
+
+  .card:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 100%;
+
+    bottom: 0;
+    background: linear-gradient(var(--color-matcha) 0%, var(--color-core-pink) 100%);
+  }
 }
 
 @layer glitch {
@@ -209,14 +220,6 @@ p strong {
       transform: translate(-3px, 3px);
     }
 
-    40% {
-      transform: translate(-3px, -3px);
-    }
-
-    60% {
-      transform: translate(3px, 3px);
-    }
-
     80% {
       transform: translate(3px, -3px);
     }
@@ -235,7 +238,4 @@ p strong {
   top: 0;
   bottom: 0;
   z-index: 1;
-}
-
-.background-profile {
 }

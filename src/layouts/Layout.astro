@@ -4,6 +4,7 @@ import '@fontsource/michroma'
 import '@fontsource-variable/quicksand'
 import '@fontsource-variable/roboto-mono'
 import { ClientRouter } from 'astro:transitions'
+import Theme from '@/shared/components/Theme/Theme'
 ---
 
 <!doctype html>
@@ -15,9 +16,20 @@ import { ClientRouter } from 'astro:transitions'
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Portafolio de Carlos V." />
     <title>Portafolio</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('darkTheme')
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light')
+        document.documentElement.setAttribute('data-theme', theme)
+      } catch (e) {
+        console.error('Error setting theme:', e)
+      }
+    </script>
     <ClientRouter />
   </head>
   <body>
+    <Theme client:load />
     <slot />
   </body>
 </html>
